@@ -6,6 +6,7 @@ import json
 import csv
 import pandas as pd
 import os
+import time
 #import sys
 
 # %%
@@ -13,7 +14,7 @@ import os
 url = 'https://api.semanticscholar.org/graph/v1/paper/search'
 
 # Directly define the API key (Reminder: Securely handle API keys in production environments)
-api_key = 'zRjnP89HI697jM02sRqJjX9LgSItJSta3PDJUVN2'  # Replace with the actual API key
+api_key = 'zRjnP89HI697jM02sRqJjX9LgSItJSta3PDJUVN2'  
 
 ruta_archivos_pdf = []
 
@@ -39,7 +40,7 @@ for key, value in data.items():
 count = 0
 for titulo in titulos:
     count += 1
-    print(titulo)
+    #print(titulo)
 
 print("Numero de articulos: "+ str(count))
 
@@ -50,7 +51,7 @@ print("Numero de articulos: "+ str(count))
 arregloIds = [] 
 
 # More specific query parameter
-for i in range(10):
+for i in range(1000):
     query_params = {'query': titulos[i],
                     'limit': 1}
     paperDataQueryParams = {'fields': 'title'}
@@ -71,6 +72,8 @@ for i in range(10):
             print(f"Key 'data' not found in response JSON: {response.json()}")
     else:
         print(f"Request failed with status code {response.status_code}: {response.text}")
+    # Agregar un retraso de un segundo entre las consultas
+    time.sleep(1)
 
 
 
@@ -102,7 +105,7 @@ def descargar_articulo(id):
     return None
 
   # Devolver el contenido del artículo en formato PDF
-  print(response.content)
+ # print(response.content)
   return response.content
 
 
@@ -129,6 +132,7 @@ for i in range(len(arregloIds)):
 
   else:
     print(f"No se pudo descargar el artículo con el ID '{id}'.")
+  time.sleep(1)
 
 
 # %%
@@ -193,6 +197,7 @@ for i in range(len(idsReferencias)):
 
   else:
     print(f"No se pudo descargar el artículo con el ID '{id}'.")
+  time.sleep(1)
 
 
 # %%
@@ -305,10 +310,12 @@ print(len(ruta_archivos_pdf))
 for i in range(len(arregloIds)):
     id = arregloIds[i]
     articulo_pdf = descargar_articulo_pdf(id)
+time.sleep(1)
 
 for i in range(len(idsReferencias)):
     id = idsReferencias[i]
     articulo_pdf = descargar_articulo_pdf(id)
+time.sleep(1)
 
     
 
