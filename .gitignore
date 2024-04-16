@@ -1,2 +1,11 @@
 # Ignorar el archivo dict_split_1.json
 dict_split_1.json
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
