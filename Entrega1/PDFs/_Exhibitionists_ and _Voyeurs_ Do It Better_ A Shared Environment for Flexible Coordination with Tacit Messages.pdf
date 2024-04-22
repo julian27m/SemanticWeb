@@ -1,0 +1,993 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en">
+
+
+  
+<!-- Mirrored from www.mindraces.org/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Dec 2020 17:12:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta http-equiv="Content-Type"
+          content="text/html;charset=utf-8" />
+
+    <title>MindRACES - Mind RACES: from Reactive to Anticipatory Cognitive Embodied Systems</title>
+
+    
+      
+        <base  />
+      
+    
+
+    <meta name="generator" content="Plone - http://plone.org" />
+
+    <meta content="Mind RACES is a three-year EC funded project (Sixth Framework Programme - Information Society and Technologies - Cognitive Systems) involving 8 Partners. It is mainly focused on the concept of Anticipation. The project started on October 1st 2004 and was formally completed on December 2007. The MindRACES website will be maintained and continuously updated anyway, and it will include novel work of the consortium on prediction and anticipation."
+          name="description" />
+    <meta content="ALL" name="robots" />
+    <meta content="Global" name="distribution" />
+    <meta content="Mind RACES is a three-year EC funded project (Sixth Framework Programme - Information Society and Technologies - Cognitive Systems) involving 8 Partners. It is mainly focused on the concept of Anticipation. The project started on October 1st 2004 and was formally completed on December 2007. The MindRACES website will be maintained and continuously updated anyway, and it will include novel work of the consortium on prediction and anticipation."
+          name="DC.description" />
+    <meta content="admin" name="DC.creator" />
+    <meta content="2008-05-15 19:15:15"
+          name="DC.date.created" />
+    <meta content="2008-05-16 16:17:11"
+          name="DC.date.modified" />
+    <meta content="Document" name="DC.type" />
+    <meta content="text/html" name="DC.format" />
+    <meta content="Global" name="DC.distribution" />
+
+    <!-- Basic crude style for Netscape4.x - This can be removed
+         if you don't want the special NS4 look - it will still work,
+         just be plain text instead. Column layout for Netscape4.x included -->
+    <link rel="Stylesheet" type="text/css"
+          href="ploneNS4.css" />
+
+    <!-- Column style sheet. -->
+    <style type="text/css" media="all">@import url(ploneColumns.css);</style>
+
+    <!-- Main style sheets for CSS2 capable browsers -->
+    <style type="text/css" media="screen"> @import url(plone.css);</style>
+
+    <!-- Old style sheet from Plone 1.0, remove tal:condition="nothing" if you need to use the old styles.
+         Will be removed in Plone 2.1. -->
+    
+
+    <!-- Alternate style sheets for the bigger/smaller text switcher -->
+    <link rel="alternate stylesheet" type="text/css"
+          media="screen"
+          href="ploneTextSmall.css"
+          title="Small Text" />
+    <link rel="alternate stylesheet" type="text/css"
+          media="screen"
+          href="ploneTextLarge.css"
+          title="Large Text" />
+
+    <!-- Custom style sheet if available -->
+    <style type="text/css" media="all">@import url(ploneCustom.css);</style>
+
+    <!-- Style sheet used for printing -->
+    <link rel="stylesheet" type="text/css" media="print"
+          href="plonePrint.css" />
+
+    <!-- Style sheet used for presentations (Opera is the only browser supporting this at the moment) -->
+    <link rel="stylesheet" type="text/css"
+          media="projection"
+          href="plonePresentation.css" />
+
+    <!-- Internet Explorer CSS Fixes -->
+    <!--[if IE]>
+    <style type="text/css" media="all">@import url(https://www.mindraces.org/ploneIEFixes.css);</style>
+    <![endif]-->
+
+    <link rel="shortcut icon"
+          href="favicon.ico"
+          type="image/x-icon" />
+
+    <link rel="search"
+          href="search_form.html"
+          title="Search this site" />
+
+    
+    <link rel="up" href="#" title="Up one level" />
+    <link rel="copyright" href="copyright.html"
+          title="Copyright information" />
+    <link rel="author" href="author.html"
+          title="Author information" />
+
+    
+
+    <!-- Disable IE6 image toolbar -->
+    <meta http-equiv="imagetoolbar" content="no" />
+
+    
+      <!-- A slot where you can insert CSS in the header from a template -->
+      
+    
+
+    
+
+      
+    
+    
+    
+    
+    
+
+
+      
+      <!-- A slot where you can insert elements in the header from a template -->
+    
+
+    
+      <!-- A slot where you can insert javascript in the header from a template -->
+      
+    
+
+    <!-- Common Plone ECMAScripts -->
+
+    <!-- Pull-down ECMAScript menu, only active if logged in -->
+    
+
+    <!-- Define dynamic server-side variables for javascripts in this one  -->
+    <script type="text/javascript"
+            src="plone_javascript_variables.js">
+    </script>
+
+    <script type="text/javascript"
+            src="plone_javascripts.js">
+    </script>
+
+    
+
+      <!-- Old JS from Plone 1.0, remove tal:condition="nothing" if you need to use the old pop-ups.
+           Will be removed in Plone 2.1 -->
+      
+
+    
+
+  </head>
+
+  <body class="section-index_html">
+
+    <div id="visual-portal-wrapper">
+
+      <div id="portal-top">
+
+ <table width="100%" border="0" cellspacing="0" cellpadding="0" background="sfo_header.gif">
+      <tr> 
+        <td valign="top">
+           <h1 id="portal-logo">
+    <a href="index.html">MindRACES</a>
+</h1>
+        </td>
+        <td width="99%">
+
+        <a class="hiddenStructure"
+           href="index.html#documentContent">Skip to content</a>
+
+           <ul id="portal-siteactions">
+    
+    <li id="siteaction-small_text"><a
+    href="javascript:setActiveStyleSheet('Small Text', 1);"
+    title="Small Text">Small Text</a></li>
+    <li id="siteaction-normal_text"><a
+    href="javascript:setActiveStyleSheet('', 1);"
+    title="Normal Text">Normal Text</a></li>
+    <li id="siteaction-large_text"><a
+    href="javascript:setActiveStyleSheet('Large Text', 1);"
+    title="Large Text">Large Text</a></li>
+    
+</ul>
+
+           <div id="portal-searchbox">
+    <form name="searchform"
+          action="https://www.mindraces.org/search">
+        <label for="searchGadget" class="hiddenStructure">Search</label>
+        <input id="searchGadget" name="SearchableText"
+               type="text" size="20" alt="Search"
+               title="Search" accesskey="s"
+               class="visibility:visible" tabindex="30001" />
+        <input class="searchButton" type="submit"
+               value="Search" accesskey="s" tabindex="30002" />
+    </form>
+</div>
+
+        </td>
+      </tr>
+    </table>
+
+           <div id="portal-skinswitcher">
+  
+</div>
+<table id="portal-globalnavpersonal">
+<tr>
+<td align="left">
+           <div id="portal-breadcrumbs">
+
+     
+
+    You are here:
+    
+    
+        Home
+    
+</div>
+           
+    <h5 class="hiddenStructure">Sections</h5>
+
+    <ul id="portal-globalnav">
+        
+        <li id="portaltab-index_html" class="selected">
+            <a href="index.html"
+               accesskey="t">Home</a>
+        </li>
+        
+        
+        <li id="portaltab-objectives_tab" class="plain">
+            <a href="objectives.html"
+               accesskey="t">Objectives</a>
+        </li>
+        
+        
+        <li id="portaltab-workpackages_tab" class="plain">
+            <a href="workpackages.html"
+               accesskey="t">WorkPackages</a>
+        </li>
+        
+        
+        <li id="portaltab-partners_tab" class="plain">
+            <a href="partners.html"
+               accesskey="t">Partners</a>
+        </li>
+        
+    </ul>
+
+</td>
+<td align="right">
+           
+
+<h5 class="hiddenStructure">Personal tools</h5>
+
+<ul id="portal-personaltools">
+    <li class="portalUser">
+        <!-- <a href="http://www.mindraces.org/Members/member_search_results">People</a> -->
+        <a href="partners/index.html">People</a>
+    </li>
+
+    
+
+    <!-- <li class="portalNotLoggedIn" tal:condition="isAnon"
+          i18n:translate="you_are_not_logged_in">
+              You are not logged in
+    </li> -->
+
+       
+    
+        <li>
+            <a href="login_form.html"
+               accesskey="u">
+               &nbsp;Log in
+            </a>
+        </li>
+    
+    <li>
+        <a href="mailto:info@mindraces.org" title="Mail MindRACES staff to have further information about MindRACES">info</a>
+    </li>
+    <li>
+        <a href="http://stats.noze.it/www.mindraces.org/" title="MindRACES Stats">stats</a>
+    </li>
+
+    <li>
+        <a href="search_rssfb14.html?SearchableText=&amp;Title=&amp;Description=&amp;created%3Adate=1970%2F02%2F01+00%3A00%3A00+GMT&amp;created_usage=range%3Amin&amp;portal_type%3Alist=MindRACESFile&amp;Creator=&amp;rs_toggle=%23&amp;review_state=announce&amp;review_state=custom&amp;review_state=members&amp;review_state=private&amp;review_state=public1&amp;review_state=published&amp;review_state=visible&amp;review_state=waitreview&amp;submit=Cerca">
+        <img src="rss.gif"
+             alt="RSS MindRACES Publications Feed"
+             title="RSS MindRACES Publications Feed" />
+        </a>
+    </li>
+</ul>
+
+</td>
+</tr>
+</table>
+
+      </div>
+
+      <div class="visualClear"></div>
+
+      <!-- The wrapper table. It contains the three columns. There's a table-less
+           alternative in the plone_tableless skin layer that you can use if you
+           prefer layouts that don't use tables. -->
+      <table id="portal-columns">
+        <tbody>
+          <tr>
+            <!-- start of the left (by default at least) column -->
+            <td id="portal-column-one">
+              <div class="visualPadding">
+                
+                  
+
+    
+
+        
+            
+    <div class="portlet" id="portlet-navigation-tree">
+    <div>
+<!--
+        <h5 i18n:translate="box_navigation">Navigation</h5>
+-->
+        <div class="portletBody">
+            <div class="portletContentNav odd">
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+                
+                
+                    
+<tr>
+<td style="background: url(sfo_button.gif) no-repeat;">
+                        
+
+                        <a href="index.html"
+                           accesskey="n"
+                           class="navItem navRootItem currentNavItem"
+                           title="MindRACES">
+                            <img height="16" width="16"
+    alt="" class="navIconRoot"
+    src="site_icon.gif"
+    title="mindraces_plone_site" />
+                            <span class="navItemText">
+                                  Home
+                            </span>
+                        </a>
+</td>
+</tr>
+                    
+                
+                
+                    
+<tr>
+<td style="background: url(sfo_button.gif) no-repeat;">
+                        <a href="objectives/index.html"
+                           accesskey="n"
+                           class="navItem navLevel1"
+                           title="Objectives of MindRACES Project.">
+                            <img height="16" width="16"
+    alt="" class="navIcon"
+    src="folder_icon.gif"
+    title="Folder" />
+                            <span class="navItemText">Objectives</span>
+                        </a>
+
+                        
+</td>
+</tr>
+                    
+                
+                
+                    
+<tr>
+<td style="background: url(sfo_button.gif) no-repeat;">
+                        <a href="partners/index.html"
+                           accesskey="n"
+                           class="navItem navLevel1"
+                           title="Who is working on in MindRACES Project">
+                            <img height="16" width="16"
+    alt="" class="navIcon"
+    src="folder_icon.gif"
+    title="Folder" />
+                            <span class="navItemText">Partners</span>
+                        </a>
+
+                        
+</td>
+</tr>
+                    
+                
+                
+                    
+<tr>
+<td style="background: url(sfo_button.gif) no-repeat;">
+                        <a href="documents/index.html"
+                           accesskey="n"
+                           class="navItem navLevel1"
+                           title="Project's technical and administrative documents.">
+                            <img height="16" width="16"
+    alt="" class="navIcon"
+    src="folder_icon.gif"
+    title="Folder" />
+                            <span class="navItemText">Documents</span>
+                        </a>
+
+                        
+</td>
+</tr>
+                    
+                
+                
+                    
+<tr>
+<td style="background: url(sfo_button.gif) no-repeat;">
+                        <a href="public_references/index.html"
+                           accesskey="n"
+                           class="navItem navLevel1"
+                           title="List of publications released worldwide by the MindRACES Consortium">
+                            <img height="16" width="16"
+    alt="" class="navIcon"
+    src="folder_icon.gif"
+    title="Folder" />
+                            <span class="navItemText">Publications</span>
+                        </a>
+
+                        
+</td>
+</tr>
+                    
+                
+                
+                    
+<tr>
+<td style="background: url(sfo_button.gif) no-repeat;">
+                        <a href="references/index.html"
+                           accesskey="n"
+                           class="navItem navLevel1"
+                           title="Resources of any kind related to MindRACES contents.">
+                            <img height="16" width="16"
+    alt="" class="navIcon"
+    src="folder_icon.gif"
+    title="Folder" />
+                            <span class="navItemText">References</span>
+                        </a>
+
+                        
+</td>
+</tr>
+                    
+                
+                
+                    
+<tr>
+<td style="background: url(sfo_button.gif) no-repeat;">
+                        <a href="events/index.html"
+                           accesskey="n"
+                           class="navItem navLevel1"
+                           title="Interesting events for the MindRACES project community.">
+                            <img height="16" width="16"
+    alt="" class="navIcon"
+    src="folder_icon.gif"
+    title="Folder" />
+                            <span class="navItemText">Events</span>
+                        </a>
+
+                        
+</td>
+</tr>
+                    
+                
+                
+                    
+<tr>
+<td style="background: url(sfo_button.gif) no-repeat;">
+                        <a href="dissemination/index.html"
+                           accesskey="n"
+                           class="navItem navLevel1"
+                           title="Here is a list of resources and channels that are used to disseminate information about MindRACES Project">
+                            <img height="16" width="16"
+    alt="" class="navIcon"
+    src="folder_icon.gif"
+    title="Folder" />
+                            <span class="navItemText">Dissemination</span>
+                        </a>
+
+                        
+</td>
+</tr>
+                    
+                
+                
+                    
+<tr>
+<td style="background: url(sfo_button.gif) no-repeat;">
+                        <a href="mindraces_google_search/index.html"
+                           accesskey="n"
+                           class="navItem navLevel1"
+                           title="MindRACES Custom Google Search">
+                            <img height="16" width="16"
+    alt="" class="navIcon"
+    src="folder_icon.gif"
+    title="Folder" />
+                            <span class="navItemText">Google Search</span>
+                        </a>
+
+                        
+</td>
+</tr>
+                    
+                
+                
+</table>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+
+        
+    
+    
+
+        
+            
+        
+
+        
+    
+    
+
+        
+            
+        
+
+        
+    
+    
+
+        
+            <div>
+<div class="portletBody">
+<center>
+<table><tr><td></td></tr></table>
+<small><hr><a href="http://www.youtube.com/mindraces" alt="MindRaces Video Channel at Youtube" title="MindRaces Video Channel at Youtube">
+<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Video Channel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+</a>
+<hr></small>
+
+<table align="center" border="0">
+<tr><td align="center">
+<object>
+<param name="movie" value="http://www.youtube.com/v/yZ3Ro8jSKtA&amp;rel=1">
+<param name="wmode" value="transparent">
+<embed title="Anticipatory Robotic Arm Demo" src="http://www.youtube.com/v/yZ3Ro8jSKtA&amp;rel=1" type="application/x-shockwave-flash" wmode="transparent" width="120" height="100"></embed>
+</object>
+</td></tr>
+<tr><td align="center"><small><i><a href="http://www.youtube.com/watch?v=yZ3Ro8jSKtA&amp;feature=PlayList&amp;p=82B8C629BD04864E&amp;index=1" alt="Anticipatory Robotic Arm Demo" title="Anticipatory Robotic Arm Demo">Anticipatory Robotic Arm</a></i>&nbsp;&nbsp;<b><a href="dissemination/movies/index_html.html#5" alt="MindRaces Video Description" title="MindRaces Video Descriptions">(Details)</a></b><br><br>
+</small></td></tr>
+<tr><td align="center">
+<object>
+<param name="movie" value="http://www.youtube.com/v/6MHulde-7FE&amp;rel=1">
+<param name="wmode" value="transparent">
+<embed title="Analogical Aibo Demo" src="http://www.youtube.com/v/6MHulde-7FE&amp;rel=1" type="application/x-shockwave-flash" wmode="transparent" width="120" height="100"></embed>
+</object>
+</td></tr>
+<tr><td align="center"><small><i><a href="http://www.youtube.com/watch?v=6MHulde-7FE&amp;feature=PlayList&amp;p=82B8C629BD04864E&amp;index=2" alt="Analogical Aibo Demo" title="Analogical Aibo Demo">Analogical Aibo</a></i>&nbsp;&nbsp;<b><a href="dissemination/movies/index_html.html#1" alt="MindRaces Video Description" title="MindRaces Video Descriptions">(Details)</a></b><br><br></small></td></tr>
+<tr><td align="center">
+<object><param name="movie" value="http://www.youtube.com/v/TjFqOnAnALE&amp;rel=1">
+<param name="wmode" value="transparent">
+<embed title="Guard and Thief Demo" src="http://www.youtube.com/v/TjFqOnAnALE&amp;rel=1" type="application/x-shockwave-flash" wmode="transparent" width="120" height="100"></embed></object>
+</td></tr>
+<tr><td align="center"><small><i><a href="http://www.youtube.com/watch?v=TjFqOnAnALE&amp;feature=PlayList&amp;p=82B8C629BD04864E&amp;index=0" alt="Guard and Thief Demo" title="Guard and Thief Demo">Guard and Thief</a></i>&nbsp;&nbsp;<b><a href="dissemination/movies/index_html.html#2" alt="MindRaces Video Description" title="MindRaces Video Descriptions">(Details)</a></b><br><br></small></td></tr>
+<tr><td align="center">
+<object><param name="movie" value="http://www.youtube.com/v/UvYZz3xO6m0&amp;rel=1">
+<param name="wmode" value="transparent">
+<embed title="SURE Reach Demo 1" src="http://www.youtube.com/v/UvYZz3xO6m0&amp;rel=1" type="application/x-shockwave-flash" wmode="transparent" width="120" height="100"></embed></object>
+</td></tr>
+<tr><td align="center"><small><i><a href="http://www.youtube.com/watch?v=UvYZz3xO6m0&amp;feature=PlayList&amp;p=82B8C629BD04864E&amp;index=3" alt="SURE Reach Demo 1" title="SURE Reach Demo 1">SURE Moving Arm (1)</a></i>&nbsp;&nbsp;<b><a href="dissemination/movies/index_html.html#34" alt="MindRaces Video Description" title="MindRaces Video Descriptions">(Details)</a></b><br><br></small></td></tr>
+<tr><td align="center">
+<object><param name="movie" value="http://www.youtube.com/v/UvYZz3xO6m0&amp;rel=1">
+<param name="wmode" value="transparent">
+<embed title="SURE Reach Demo 2" src="http://www.youtube.com/v/lb9sSQgtn8Q&amp;rel=1" type="application/x-shockwave-flash" wmode="transparent" width="120" height="100"></embed></object>
+</td></tr>
+<tr><td align="center"><small><i><a href="http://www.youtube.com/watch?v=lb9sSQgtn8Q&amp;feature=PlayList&amp;p=82B8C629BD04864E&amp;index=4" alt="SURE Reach Demo 2" title="SURE Reach Demo 2">SURE Moving Arm (2)</a></i>&nbsp;&nbsp;<b><a href="dissemination/movies/index_html.html#34" alt="MindRaces Video Description" title="MindRaces Video Descriptions">(Details)</a></b><br><br></small></td></tr>
+</table>
+<hr>
+</center>
+</div>
+</div>
+        
+
+        
+    
+
+                
+                &nbsp;
+              </div>
+            </td>
+            <!-- end of the left (by default at least) column -->
+
+            <!-- start of main content block -->
+            <td id="portal-column-content">
+
+              
+                <div id="content" class="">
+
+                  
+
+                  <div class="documentContent" id="region-content">
+
+                    <a name="documentContent"></a>
+
+                    
+
+                    
+
+                    
+    
+        <h1 class="documentFirstHeading">Mind RACES: from Reactive to Anticipatory Cognitive Embodied Systems</h1>
+    
+        <div class="documentActions">
+    <ul>
+    
+        <li>
+            <a href="index_html/sendto_form.html">
+            
+                <img src="mail_icon.gif"
+                     alt="Send this page to somebody"
+                     title="Send this page to somebody"
+                     height="16" width="16" />
+            </a>
+        </li>
+    
+    
+        <li>
+            <a href="javascript:this.print();">
+            
+                <img src="print_icon.gif"
+                     alt="Print this page"
+                     title="Print this page" height="16"
+                     width="16" />
+            </a>
+        </li>
+    
+
+    </ul>
+
+    
+
+</div>
+    
+        <div class="documentDescription">Mind RACES is a three-year EC funded project (Sixth Framework Programme - Information Society and Technologies - Cognitive Systems) involving 8 Partners. It is mainly focused on the concept of Anticipation. The project started on October 1st 2004 and was formally completed on December 2007. The MindRACES website will be maintained and continuously updated anyway, and it will include novel work of the consortium on prediction and anticipation.</div>
+    
+        
+    
+        <div class="plain">
+            <p>The general goal of the <a href="http://en.wikipedia.org/wiki/MindRACES" alt="MindRACES at Wikipedia" title="MindRACES at Wikipedia">Mind RACES project
+</a> is to <b>investigate different anticipatory cognitive mechanisms and architectures</b> in order to <b>build Cognitive Systems</b> endowed with the ability to predict the outcome of their actions, to build a model of future events, to control their perception anticipating future stimuli and to emotionally react to possible future scenarios. Such Anticipatory Cognitive Systems will contribute to the successful implementation of the desired ambient intelligence.&nbsp; <br></p><p>After 3 years of research <a href="documents/final_report/MR_Final_Activity_Report_2.doc">(see the Final EU Commission Report)</a> the <b><a href="partners.html">7 Partners</a> </b>of MindRACES Consortium produced more than <a href="searchfb14.html?SearchableText=&amp;Title=&amp;Description=&amp;created%3Adate=1970%2F02%2F01+00%3A00%3A00+GMT&amp;created_usage=range%3Amin&amp;portal_type%3Alist=MindRACESFile&amp;Creator=&amp;rs_toggle=%23&amp;review_state=announce&amp;review_state=custom&amp;review_state=members&amp;review_state=private&amp;review_state=public1&amp;review_state=published&amp;review_state=visible&amp;review_state=waitreview&amp;submit=Cerca"><b>80 publications</b></a>, <b><a href="dissemination/movies.html">different robotic and software artefacts</a></b> and <b><a href="events.html">important events</a></b>, such as <a href="events/abials2.html">ABIALS 2008</a> and the <a href="events/fss05.html">Fall Symposium 2005</a>, that show the importance of the <b><a href="http://en.wikipedia.org/wiki/Anticipation_(artificial_intelligence)">Anticipation</a></b> in various cognitive context. <br></p><br><p>This is a list of some of the most relevant publications resulting from MindRACES (<a href="searchfb14.html?SearchableText=&amp;Title=&amp;Description=&amp;created%3Adate=1970%2F02%2F01+00%3A00%3A00+GMT&amp;created_usage=range%3Amin&amp;portal_type%3Alist=MindRACESFile&amp;Creator=&amp;rs_toggle=%23&amp;review_state=announce&amp;review_state=custom&amp;review_state=members&amp;review_state=private&amp;review_state=public1&amp;review_state=published&amp;review_state=visible&amp;review_state=waitreview&amp;submit=Cerca">click HERE to see them all</a>):</p><i></i><ol><li><a href="public_references/lucs_publications/Balkenius.Johansson.CogProc.2007.pdf/view97fe.html?searchterm=Anticipatory%20Models%20in%20Gaze%20Control"><i>Balkenius, C. and Johansson, B. (2007). Anticipatory Models in Gaze Control: A Developmental Model. Cognitive Processing, 8, 167-174.</i></a></li><li><a href="public_references/uwcogsci_publications/mindracesfile.2007-04-23.0874185503/viewb045.html?searchterm=Anticipatory%20Behavior%20in%20Adaptive%20Learning%20Systems"><i>Butz, M. V., Sigaud, O., Pezzulo, G., &amp; Baldassarre, G. (Eds.). (2007). Anticipatory Behavior in Adaptive Learning Systems: From Brains to Individual and Social Behavior, LNAI 4520 (State-of-the-Art Survey). Springer Verlag, Berlin-Heidelberg.</i></a></li><li><a href="login_form0523.html?searchterm=Exploiting%20Redundancy%20for%20Flexible%20Behavior"><i>Butz, M.V., Herbort, O., &amp; Hoffmann, J. (2007). Exploiting Redundancy for Flexible Behavior: Unsupervised Learning in a Modular Sensorimotor Control Architecture. Psychological Review, 114, 1015-1046.</i></a></li><li><a href="public_references/uwcogsci_publications/FunctionApproximationXCS.pdf/view3e8e.html?searchterm=Function%20Approximation%20with%20XCS:%20Hyperellipsoidal%20Conditions,%20Recursive%20Least%20Squares,%20and%20Compaction"><i>Butz, M.V., Lanzi, P.L., &amp; Wilson, S.W. (in press). Function Approximation with XCS: Hyperellipsoidal Conditions, Recursive Least Squares, and Compaction. IEEE Transactions on Evolutionary Computation.</i></a></li><li><a href="http://www.idsia.ch/~juergen/rnnevolution.html"><i>Gomez F. and Schmidhuber J. (2005). Co-Evolving Recurrent Neurons Learn Deep Memory POMDPs. In Proceedings of the Genetic and Evolutionary Computation Conference (GECCO-05, Washington, D.C.). Nominated for Best Paper in Coevolution</i></a></li><li><a href="public_references/istc_cnr_publications/mindracesfile.2007-04-10.7273362180/view34aa.html?searchterm=The%20unexpected%20aspects%20of%20Surprise"><i>Lorini, E., Castelfranchi, C. (2006). The unexpected aspects of Surprise. International Journal of Pattern Recognition and Artificial Intelligence, 20 (6), pp. 817-835.</i></a></li><li><a href="public_references/istc_cnr_publications/mindracesfile.2007-04-15.0899825159/view94e2.html?searchterm=symbol%20detachment%20problem"><i>Pezzulo, G. and Castelfranchi, C. (2007). The symbol detachment problem. Cognitive Processing, 8(2):115–131.</i></a></li><li><i>Pezzulo, G.; Butz, M.V.; Castelfranchi, C. &amp; Falcone, R. (eds.) The Challenge of Anticipation: A Unifying Framework for the Analysis and Design of Artificial Cognitive Systems. Springer, </i><span style="color: rgb(255, 0, 0);">forthcoming</span></li><li><a href="http://www.idsia.ch/~juergen/evolino.html"><i>Schmidhuber J., Wierstra, D. and Gomez, F. (2005). Evolino: Hybrid Neuroevolution / Optimal Linear Search for Sequence Learning. In Proceedings of the International Joint Conference on Artificial Intelligence (IJCAI-05, Edinburgh).</i></a></li><li><i><a href="http://www.idsia.ch/~juergen/evolino.html">Wierstra D., Gomez, F. and Schmidhuber, J. (2005). Modeling Systems with Internal State using Evolino. In Proceedings of the Genetic and Evolutionary Computation Conference (GECCO-05, Washington, D.C.). Winner of Best Paper Award in Learning Classifier Systems and Other Genetics-Based Machine Learning.</a></i></li><li><a href="public_references/istc_cnr_publications/mindracesfile.2008-05-15.4211057476/viewcb56.html?searchterm=Integrating%20epistemic"><i>
+Ognibene, D., Balkenius, C., Baldassarre, G. (in press 2008). Integrating epistemic action (active vision) and pragmatic action (reaching): a neural architecture for camera-arm robots. In: 'From Animals to Animats 10: The 10th International Conference on the Simulation of Adaptive Behaviour (SAB'08)'. 7-12 July 2008, Osaka, Japan.</i></a></li></ol>
+<br>
+<br>
+<br>
+<br>
+<hr>
+
+<!-- Start Quantcast tag -->
+
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js">
+</script>
+<script type="text/javascript">_qacct="p-a3hnNvkBs2jEo";quantserve();
+</script>
+<noscript>
+<a href="http://www.quantcast.com/p-a3hnNvkBs2jEo" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-a3hnNvkBs2jEo.gif" style="display: none" border="0" height="1" width="1" alt="Quantcast"/></a>
+</noscript>
+<!-- End Quantcast tag -->
+<small>
+<table border="0">
+<tr>
+<td><b>PROJECT NUMBER</b>:&nbsp;IST-511931&nbsp;&nbsp;</td>
+<td><b>PROJECT TYPE</b>:&nbsp;STRP&nbsp;&nbsp;</td>
+<td><b>START DATE</b>:&nbsp;October 1st 2004&nbsp;&nbsp;</td>
+<td><b>PROJECT COORDINATOR</b>:&nbsp;<i><a href="#" title="Mail at r.falcone@istc.cnr.it">Rino Falcone</a></i></td>
+</tr>
+</table>
+</small>
+<hr>
+<br>
+<br>
+  <table>
+    <tr>
+    <td align="center" width="50%"><script   src="http://gmodules.com/ig/ifr?url=http://www.google.com/coop/api/014175332292519093511/cse/hea16uoichq/gadget&amp;synd=open&amp;w=320&amp;h=75&amp;title=MindRACES+Search+Engine&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js">
+    </script>
+    </td>
+    <td align="center" width="25%">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a href="http://cordis.europa.eu/ist/" title="Information Society Technologies"><img src="ist_logo.jpg" border="0" height="90" width="150"  alt="Information Society Technologies"/></a>
+    </td>
+    <td align="center" width="25%">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a href="http://cordis.europa.eu/ist/cognition/index.html" title="Information Society Technologies - Cognitive Systems"><img src="cogsys_logo.gif" border="0" height="90" width="150" alt="Information Society Technologies - Cognitive Systems"/></a>
+    </td>
+    <tr>
+    </table>
+<br>
+<br>
+<br>
+<br>
+<hr>
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=utf-8">
+<META NAME="Copyright" content="noze">
+<META HTTP-EQUIV="content-language" content="EN">
+<META NAME="Rating" content="General">
+<META NAME="Designer" content="noze">
+<META NAME="Keywords" content="artificial,intelligence,science,anticipation,action,control,active,vision,analogy,prediction,attention,cautiousness,cognitive,processes,concept,context,curiosity,emotions,goals,ideomotor,principle,monitoring,priming,sensori,motor,processes,surprise,robot">
+<META NAME="Abstract" content="Mind RACES is a three-year EC funded project focused on cognitive science and the concept of anticipation">
+<META NAME="Title" content="MindRACES (from Reactive to Anticipatory Cognitive Systems)">
+<META NAME="revisit-after" content="7">
+<META NAME="Robots" content="index,follow">
+<META NAME="Description" content="Mind RACES is a three-year EC funded project (Sixth Framework Programme - Information Society and Technologies - Cognitive Systems) involving 8 Partners. It is mainly focused on the concept of Anticipation. It starts on October, 1, 2004. The general goal of the Mind RACES project is to investigate different anticipatory cognitive mechanisms and architectures in order to build Cognitive Systems endowed with the ability to predict the outcome of their actions, to build a model of future events, to control their perception anticipating future stimuli and to emotionally react to possible future scenarios. Such Anticipatory Cognitive Systems will contribute to the successful implementation of the desired ambient intelligence. ">
+<META HTTP-EQUIV="Cache-Control" content="no-cache">
+<META HTTP-EQUIV="Expires" content="0">
+<META NAME="Author" content="noze">
+        </div>
+    
+        <div class="documentByLine">
+
+  
+
+  <span>
+    Created by
+  </span>
+
+  <a href="Members/admin.html">admin</a>
+
+  
+
+  <br />
+
+  
+
+  
+
+  <span>
+    Last modified
+  </span>
+  2008-05-16 04:17 PM
+
+  
+
+</div>
+    
+
+
+                    
+                      <div class="discussion">
+
+    
+
+</div>
+                    
+
+                  </div>
+
+                </div>
+
+              
+            </td>
+            <!-- end of main content block -->
+
+            <!-- start of right (by default at least) column -->
+            <td id="portal-column-two">
+              <div class="visualPadding">
+                
+                  
+
+    
+        
+            <div>
+
+        <div class="portletBody">
+        <center>
+        <table border="0">
+        <tr><td align="center"><small><hr><a
+    title="MindRaces News Channel"
+    href="sinList5ecb.html?synmap=CognitiveScienceNews">
+        <!-- <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;News Channel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> -->
+        <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;News Channel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+        </a><hr></small></td></tr>
+	
+        <div class="body">
+
+        <div>
+        <!-- Project News -->
+        <tr><td align="center"><small><b><a
+    title="Project News Channel"
+    href="news.html">Project News</a></b></small></td></tr>
+        <div>
+        <tr><td align="center">
+        <div class="portletContent odd">
+        <a href="mindraces_publications_update.html"
+           title="The MindRACES Project Site has been updated to better show the final project results">
+        MindRACES site update
+        </a>
+        <small><i><div class="portletDetails">2008-05-15</div></i></small>
+        </div>
+        </td></tr>
+        </div>
+        <div>
+        <tr><td align="center">
+        <div class="portletContent even">
+        <a href="mindraces_last_review_meeting.html"
+           title="The last MindRACES review meeting will be held in Rome (12-13 December 2007).
+">
+        MindRACES Last Review Meeting
+        </a>
+        <small><i><div class="portletDetails">2007-11-19</div></i></small>
+        </div>
+        </td></tr>
+        </div>
+        </div>
+
+        <!-- RSS Web News --> 
+        <tr><td align="center"><small><b><a
+    title="Cognitive Science Channel"
+    href="sinList5ecb.html?synmap=CognitiveScienceNews">Cognitive Science News</a></b></small></td></tr>
+
+        </div>
+      </table>
+      </center></div>
+      <hr>
+    <!-- <br> -->
+    <center>
+
+    <!-- <table border="0">
+    <tr>
+    <td align="center">
+    <SCRIPT type='text/javascript' language='JavaScript' src='http://xslt.alexa.com/site_stats/js/t/a?url=mindraces.org'></SCRIPT>
+    </td>
+    </tr>
+    </table> -->
+
+    </center>
+
+    </div>
+        
+
+        
+    
+
+                
+                &nbsp;
+              </div>
+            </td>
+            <!-- end of the right (by default at least) column -->
+          </tr>
+        </tbody>
+      </table>
+      <!-- end column wrapper -->
+
+      <div class="visualClear">&nbsp;</div>
+
+
+      <hr class="netscape4" />
+
+      
+ <div id="portal-footer">
+
+
+Copyright &copy; 2004-<span>2020</span>
+<a alt="noze Srl" title="noze Srl" href="http://www.noze.it/">noze Srl</a> - <a alt="MindRACES Project" title="MindRACES Project" href="index.html">MindRACES Project</a>.
+
+
+</div>
+
+ <div id="portal-colophon">
+      <!--
+
+ Please keep the Plone Powered button (or a textual link to us) if you use
+ Plone on your site. It's a nice token of gratitude, and we appreciate your
+ help in promoting the Plone name.
+
+ Plone is powered by the combined forces of Zope and CMF, two absolutely
+ great systems made by Zope Corporation (http://zope.com) and they in turn
+ are based on the best programming language in the world - Python
+ (http://www.python.org). We owe these guys a lot, thanks for making Plone
+ possible!
+
+      -->
+
+      <a href="http://plone.org/">
+ <img src="plone_powered.gif"
+      height="15" width="80" alt="Powered by Plone"
+      title="This Plone site was built using the Plone Content Management System. Click for more information." />
+      </a>
+
+      
+
+<!--
+      <p i18n:translate="text_conforms_to_standards" class="discreet">
+ This site conforms to the following standards:
+      </p>
+-->
+
+      <ul>
+ <li>
+   <a href="http://www.section508.gov/">
+     <img src="colophon_sec508.gif"
+          height="15" width="80" alt="Section 508"
+          title="This Plone site conforms to the US Government Section 508 Accessibility Guidelines." />
+   </a>
+ </li>
+ <li>
+   <a href="http://www.w3.org/WAI/WCAG1AA-Conformance"
+      title="Explanation of WCAG Conformance">
+     <img src="colophon_wai-aa.gif"
+          height="15" width="80" alt="WCAG"
+          title="This Plone site conforms to the W3C-WAI Web Content Accessibility Guidelines." />
+   </a>
+ </li>
+ <li>
+   <a href="http://validator.w3.org/check/referer">
+     <img src="colophon_xhtml.png"
+          height="15" width="80" alt="Valid XHTML"
+          title="This Plone site is valid XHTML." />
+   </a>
+ </li>
+ <li>
+   <a href="http://jigsaw.w3.org/css-validator/check/referer">
+     <img src="colophon_css.png"
+          height="15" width="80" alt="Valid CSS"
+          title="This Plone site was built with valid CSS." />
+   </a>
+ </li>
+ <li>
+   <a href="http://plone.org/browsersupport">
+     <img src="colophon_anybrowser.png"
+          height="15" width="80" alt="Usable in any browser"
+          title="This Plone site is usable in any web browser." />
+   </a>
+ </li>
+ <li>
+   <a href="http://cordis.europa.eu/ist/">
+     <img src="ist_logo.jpg" height="30" width="70"
+          alt="Information Society Technologies"
+          title="Information Society Technologies" />
+   </a>
+ </li>
+ <li>
+   <a href="http://cordis.europa.eu/ist/cognition/index.html">
+     <img src="cogsys_logo.gif" height="30" width="70"
+          alt="Information Society Technologies - Cognitive Systems"
+          title="Information Society Technologies - Cognitive Systems" />
+   </a>
+ </li>
+ <li>
+   <a href="http://www.eucognition.org/">
+     <img src="euCognition.jpg" height="30" width="70"
+          alt="EUCognition Network"
+          title="EUCognition Network" />
+   </a>
+ </li>
+<li>
+      <a href="http://fp6.cordis.lu/fp6/home.cfm">
+ <img src="fp6but.gif" height="33"
+      width="79" alt="Funded by FP6" title="Funded by FP6" />
+      </a>
+</li>
+<li>
+      <a href="http://www.noze.it/">
+      <img src="powered_by_noze.gif"
+           height="19" width="100" alt="Powered by noze"
+           title="Powered by noze" />
+      </a>
+</li>
+</ul>
+    <span>
+      <br><br>
+      <font color="#FFFFFF">Anticipatory Cognitive Science is a research field that ensembles artificial intelligence, 
+      biology, psychology, neurology, engineering and philosophy in order to build anticipatory cognitive systems that
+      are able to face human tasks with the same anticipatory capabilities and performance. In deep: 
+      Cognitive science is the interdisciplinary study of mind and intelligence, embracing philosophy, psychology, 
+      artificial intelligence, neuroscience, linguistics, and anthropology. Its intellectual origins are in the mid-1950s 
+      when researchers in several fields began to develop theories of mind based on complex representations and 
+      computational procedures. Its organizational origins are in the mid-1970s when the Cognitive Science Society 
+      was formed and the journal Cognitive Science began. Since then, more than sixty universities in North America, Europe, Asia, 
+      and Australia have established cognitive science programs, and many others have instituted courses in cognitive science.
+      </font>
+    </span>
+    </div>
+      
+
+    </div>
+
+  </body>
+
+<!-- Mirrored from www.mindraces.org/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Dec 2020 17:13:48 GMT -->
+</html>
+
+
