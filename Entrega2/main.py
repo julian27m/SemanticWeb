@@ -4,7 +4,7 @@ import requests
 import xml.etree.ElementTree as ET
 
 grobid_url = "http://localhost:8070/api/processFulltextDocument"
-pdfs_folder = 'Entrega1/PDFs'
+pdfs_folder = '../Entrega1/PDFs'
 
 def extract_info_from_pdf(pdf_path):
     try:
