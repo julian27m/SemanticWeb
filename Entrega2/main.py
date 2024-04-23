@@ -1,10 +1,10 @@
 import os
 import json
+import pandas as pd
 import requests
 import xml.etree.ElementTree as ET
 
 grobid_url = "http://localhost:8070/api/processFulltextDocument"
-pdfs_folder = '../Entrega1/PDFs'
 
 def extract_info_from_pdf(pdf_path):
     try:
@@ -12,14 +12,10 @@ def extract_info_from_pdf(pdf_path):
         with open(pdf_path, 'rb') as pdf_file:
             files = {'input': pdf_file}
             response = requests.post(grobid_url, files=files)
-            #print(response.content.decode('utf-8'))  # Imprimir el XML devuelto por GROBID
 
         if response.status_code == 200:
             print(f"Respuesta recibida para el archivo: {pdf_path}")
             root = ET.fromstring(response.content)
-            
-            # Extraer abstract
-            abstract = '\n'.join(p.text.strip() for p in root.findall('.//{http://www.tei-c.org/ns/1.0}abstract//{http://www.tei-c.org/ns/1.0}p'))
             
             # Buscar introduction usando palabras clave
             introduction = find_section_by_keywords(root, "introduction")
@@ -31,29 +27,25 @@ def extract_info_from_pdf(pdf_path):
             conclusions = find_section_by_keywords(root, "conclusions")
 
             print(f"Información extraída del archivo {pdf_path}:")
-            print(f"Abstract: {abstract}")
-            print(f"Keywords: {keywords}")
-            print(f"Introduction: {introduction}")
-            print(f"Conclusions: {conclusions}")
+            #print(f"Introduction: {introduction}")
+            #print(f"Keywords: {keywords}")
+            #print(f"Conclusions: {conclusions}")
             return {
                 'keywords': keywords,
-                'abstract': abstract,
                 'introduction': introduction,
                 'conclusions': conclusions
             }
         else:
             print(f"Error al procesar {pdf_path}: Código de estado HTTP {response.status_code}")
             return {
-                'keywords': [],
-                'abstract': '',
+                'keywords': '',
                 'introduction': '',
                 'conclusions': ''
             }
     except Exception as e:
         print(f"Error al procesar {pdf_path}: {e}")
         return {
-            'keywords': [],
-            'abstract': '',
+            'keywords': '',
             'introduction': '',
             'conclusions': ''
         }
@@ -69,8 +61,7 @@ def find_section_by_keywords(root, section_name):
     # Palabras clave relacionadas a la sección
     section_keywords = {
         'introduction': ['introduction', 'background', 'context'],
-        'conclusions': ['conclusions', 'concluding', 'summary', 'summary of findings'"conclusions", "conclusion", "concluding remarks", "remarkable conclusions"],
-        'keywords': ['keywords', 'key words', 'index terms', 'terms']
+        'conclusions': ['conclusions', 'concluding', 'summary', 'summary of findings'"conclusions", "conclusion", "concluding remarks", "remarkable conclusions"]
     }
 
     # Buscar sección por palabras clave relacionadas
@@ -83,9 +74,6 @@ def find_section_by_keywords(root, section_name):
             break
 
     return section_text.strip()
-#test MV
-
-
 
 def find_keywords(root):
     """
@@ -98,38 +86,30 @@ def find_keywords(root):
     return keywords_text.strip(', ')
 
 def main():
-    pdf_info_list = []
-    abstract_count = 0
-    keywords_count = 0
-    introduction_count = 0
-    conclusions_count = 0
+    # Leer el archivo CSV
+    csv_path = 'Entrega2/primeras_cinco_filas.csv'
+    df = pd.read_csv(csv_path)
 
-    for filename in os.listdir(pdfs_folder):
-        if filename.endswith('.pdf'):
-            pdf_path = os.path.join(pdfs_folder, filename)
-            try:
-                pdf_info = extract_info_from_pdf(pdf_path)
-                pdf_info_list.append({filename: pdf_info})
-                if pdf_info['abstract']:
-                    abstract_count += 1
-                if pdf_info['keywords']:
-                    keywords_count += 1
-                if pdf_info['introduction']:
-                    introduction_count += 1
-                if pdf_info['conclusions']:
-                    conclusions_count += 1
-            except Exception as e:
-                print(f"Error al procesar {pdf_path}: {e}")
+    # Contador de progreso
+    total_rows = len(df)
+    processed_rows = 0
 
-    print(f"\nResumen de análisis:")
-    print(f"{len(pdf_info_list)} PDFs analizados:")
-    print(f"{abstract_count} con abstract")
-    print(f"{keywords_count} con keywords")
-    print(f"{introduction_count} con introduction")
-    print(f"{conclusions_count} con conclusions")
+    # Recorrer el DataFrame
+    for index, row in df.iterrows():
+        pdf_path = row['pdf_path']  # Obtener la ruta del PDF desde la columna 'pdf_path'
+        try:
+            pdf_info = extract_info_from_pdf(pdf_path)
+            # Asignar los valores a las nuevas columnas
+            df.at[index, 'introduction'] = pdf_info['introduction']
+            df.at[index, 'keywords'] = pdf_info['keywords']
+            df.at[index, 'conclusions'] = pdf_info['conclusions']
+            processed_rows += 1
+            print(f"Procesando fila {processed_rows} de {total_rows}")
+        except Exception as e:
+            print(f"Error al procesar {pdf_path}: {e}")
 
-    with open('pdf_info.json', 'w') as json_file:
-        json.dump(pdf_info_list, json_file, indent=4)
+    # Guardar el DataFrame actualizado en un nuevo CSV
+    df.to_csv('metadatos.csv', index=False)
 
 if __name__ == "__main__":
     main()
