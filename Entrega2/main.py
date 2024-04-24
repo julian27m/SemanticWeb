@@ -87,7 +87,7 @@ def find_keywords(root):
 
 def main():
     # Leer el archivo CSV
-    csv_path = 'Entrega2/primeras_cinco_filas.csv'
+    csv_path = 'articulos_limpios.csv'
     df = pd.read_csv(csv_path)
 
     # Contador de progreso

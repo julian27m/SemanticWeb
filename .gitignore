@@ -1,6 +1,12 @@
 # Ignorar el archivo dict_split_1.json
 dict_split_1.json
 
+# Ignorar carpeta con PDFs
+Entrega2/DescargasPDFs/
+
+#Ignorar CSVs por su tamaño
+Entrega2/CSVs/
+
 # Environments
 .env
 .venv
