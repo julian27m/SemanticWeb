@@ -1,0 +1,88 @@
+@prefix paper: <http://example.org/paper#> .
+@prefix persona: <http://example.org/persona#> .
+@prefix url_namespace: <http://example.org/semanticUrl#> .
+@prefix id_namespace: <http://example.org/id#> .
+@prefix abstract: <http://example.org/abstract#> .
+@prefix introduccion: <http://example.org/introduccion#> .
+@prefix keywords: <http://example.org/keywords#> .
+@prefix citation: <http://example.org/citation#> .
+@prefix doi: <http://example.org/doi#> .
+@prefix paperId: <http://example.org/paperId#> .
+@prefix venue: <http://example.org/venue#> .
+@prefix year: <http://example.org/year#> .
+@prefix influentialCitationCount: <http://example.org/influentialCitationCount#> .
+@prefix isOpenAccess: <http://example.org/isOpenAccess#> .
+@prefix isPublisherLicensed: <http://example.org/isPublisherLicensed#> .
+@prefix conceptAnotation: <http://example.org/conceptAnotation#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Clases
+paper:Paper a rdfs:Class .
+persona:Persona a rdfs:Class .
+
+# Propiedades
+paper:autor a rdf:Property ;
+    rdfs:domain persona:Persona ;
+    rdfs:range paper:Paper .
+
+id_namespace:authorId a rdf:Property ;
+    rdfs:domain persona:Persona ;
+    rdfs:range xsd:string .
+
+url_namespace:semanticUrl a rdf:Property ;
+    rdfs:domain persona:Persona ;
+    rdfs:range xsd:string .
+
+paper:references a rdf:Property ;
+    rdfs:domain paper:Paper ;
+    rdfs:range paper:Paper .
+
+abstract:tieneAbstract a rdf:Property ;
+    rdfs:domain paper:Paper ;
+    rdfs:range xsd:string .
+
+introduccion:tieneIntroduccion a rdf:Property ;
+    rdfs:domain paper:Paper ;
+    rdfs:range xsd:string .
+
+keywords:tieneKeyWords a rdf:Property ;
+    rdfs:domain paper:Paper ;
+    rdfs:range xsd:string .
+
+citation:tieneCitationVelocity a rdf:Property ;
+    rdfs:domain paper:Paper ;
+    rdfs:range xsd:integer .
+
+doi:tieneDOI a rdf:Property ;
+    rdfs:domain paper:Paper ;
+    rdfs:range xsd:string .
+
+paperId:tienePaperId a rdf:Property ;
+    rdfs:domain paper:Paper ;
+    rdfs:range xsd:string .
+
+venue:tieneVenue a rdf:Property ;
+    rdfs:domain paper:Paper ;
+    rdfs:range xsd:string .
+
+year:tieneAñoPublicacion a rdf:Property ;
+    rdfs:domain paper:Paper ;
+    rdfs:range xsd:integer .
+
+influentialCitationCount:tieneInfluentialCitationCount a rdf:Property ;
+    rdfs:domain paper:Paper ;
+    rdfs:range xsd:integer .
+
+isOpenAccess:tieneIsOpenAccess a rdf:Property ;
+    rdfs:domain paper:Paper ;
+    rdfs:range xsd:boolean .
+
+isPublisherLicensed:tieneIsPublisherLicensed a rdf:Property ;
+    rdfs:domain paper:Paper ;
+    rdfs:range xsd:boolean .
+
+conceptAnotation:conceptAnotation a rdf:Property ;
+    rdfs:domain paper:Paper ;
+    rdfs:range xsd:string .
