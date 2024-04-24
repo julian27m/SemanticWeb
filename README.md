@@ -30,15 +30,23 @@
 - Para ejecutar el código, primero debe instalar las bibliotecas necesarias. Puede hacer esto ejecutando el siguiente comando:
    
    ```pip install -r requirements.py```
-- Para extraer metadatos de los PDFs será necesario utilizar GROBID.
-  Para iniciar el servidor GROBID hay que ejecutar los siguientes comandos:
-  
-  ```cd Entrega2```
 
-  ```sudo apt install docker-compose```
+Ahora, para realizar adecuadamente esta entrega tuvimos que completar algunos requerimientos de la entrega anterior. Por lo tanto, dentro del archivo `docker-compose.yml`, en la carpeta `Entrega2/`, encontrarán dos contenedores de Docker. 
 
+1. Grobid: Utilizado para extraer más metadatos de los PDFs, como abstract, introducción, palabras clave y conclusiones.
+2. DBpedia Spotlight: Utilizado para anotar las menciones de recursos de DBpedia, dentro de nuestros artículos
+
+Instrucciónes de ejecución:
+- Para iniciar ambos contenedores hay que ejecutar los siguientes comandos:
   
-  ```docker-compose up -d```
+  Navegar a la ruta donde se encuentran los contenedores: ```cd Entrega2```
+
+  Instalar Docker Compose en caso de no tenerlo: ```sudo apt install docker-compose``` 
+
+  Iniciar los contenedores: ```sudo docker-compose up -d```
+
+  Detener los contenedores: ```docker-compose down```
+
 
 ## Integrantes ##
 - <a href="https://github.com/Juanes1516" target="_blank">Juan Esteban Rodríguez Ospino</a>
