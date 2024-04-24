@@ -62,6 +62,13 @@ Para la ejecución de esta entrega se siguieron los pasos descritos a continuaci
 7. Acceder a Neo4j a través de http://<ip_maquina>:7474/browser/.
 8. Realizar las consultas en Neo4j.
 
+Notas:
+Los directorios `/DescargasPDFs/` y `/CSVs/` fueron agregados al .gitignore debido a que los archivos dentro de ellos son muy pesados para subir al repositorio. 
+
+- Dentro de `/DescargasPDFs/` almacenamos los artículos descargados en formato PDF.
+- En el directorio `/CSVs/` guardamos todos los archivos .csv en los que trabajamos y modificamos la base de datos final (`archivo_entidades.csv`).
+- `archivo_entidades.csv` es el CSV final con los metadatos y las anotaciones de todos los artículos. Debido a su tamaño no lo incluimos en el repositorio pero pueden acceder a este en el siguiente enlace: 
+
 
 ## Integrantes ##
 - <a href="https://github.com/Juanes1516" target="_blank">Juan Esteban Rodríguez Ospino</a>
