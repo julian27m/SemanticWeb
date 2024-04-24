@@ -67,7 +67,7 @@ Los directorios `/DescargasPDFs/` y `/CSVs/` fueron agregados al .gitignore debi
 
 - Dentro de `/DescargasPDFs/` almacenamos los artículos descargados en formato PDF.
 - En el directorio `/CSVs/` guardamos todos los archivos .csv en los que trabajamos y modificamos la base de datos final (`archivo_entidades.csv`).
-- `archivo_entidades.csv` es el CSV final con los metadatos y las anotaciones de todos los artículos. Debido a su tamaño no lo incluimos en el repositorio pero pueden acceder a este en el siguiente enlace: 
+- `archivo_entidades.csv` es el CSV final con los metadatos y las anotaciones de todos los artículos. Debido a su tamaño no lo incluimos en el repositorio pero pueden acceder a este en el siguiente enlace: https://uniandes-my.sharepoint.com/:f:/g/personal/j_morav_uniandes_edu_co/EtyGIwSlHRJGk8Psf7ynRnUBdixntIyTdwqw6p_ZaCjWZQ?e=MHixBb 
 
 
 ## Integrantes ##
