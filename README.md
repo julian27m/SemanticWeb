@@ -18,7 +18,7 @@
 - Ejecute el script `data.py` para extraer información de artículos científicos a través del API de Semantic Scholar.
 - Ejecute el script `convertir_json_csv.py` para convertir la información previamente extraida a formato csv.
 - Por último, ejecuta el script `limpieza_datos.py` para realizar la limpieza de los datos.
-- 
+
 ### Notas importantes:
 - Cada consulta de un articulo tiene un time out para evitar que el API rechaze las peticiones por superar el timerate.
 - El tiempo de espera para la descarga de un archivo PDF es de 5 sengundos, si en este tiempo no se ha logrado descargar el archivo se pasará al siguiente artículo.
@@ -30,15 +30,23 @@
 - Para ejecutar el código, primero debe instalar las bibliotecas necesarias. Puede hacer esto ejecutando el siguiente comando:
    
    ```pip install -r requirements.py```
-- Para extraer metadatos de los PDFs será necesario utilizar GROBID.
-  Para iniciar el servidor GROBID hay que ejecutar los siguientes comandos:
-  
-  ```cd Entrega2```
 
-  ```sudo apt install docker-compose```
+Ahora, para realizar adecuadamente esta entrega tuvimos que completar algunos requerimientos de la entrega anterior. Por lo tanto, dentro del archivo `docker-compose.yml`, en la carpeta `Entrega2/`, encontrarán dos contenedores de Docker. 
 
+- Grobid: Utilizado para extraer más metadatos de los PDFs, como abstract, introducción, palabras clave y conclusiones.
+- DBpedia Spotlight: Utilizado para anotar las menciones de recursos de DBpedia, dentro de nuestros artículos
+
+Ejecución de los contenedores:
+- Para iniciar ambos contenedores hay que ejecutar los siguientes comandos:
   
-  ```docker-compose up -d```
+  1. Navegar a la ruta donde se encuentran los contenedores: ```cd Entrega2```
+
+  2. Instalar Docker Compose en caso de no tenerlo: ```sudo apt install docker-compose``` 
+
+  3. Iniciar los contenedores: ```sudo docker-compose up -d```
+
+  4. Detener los contenedores: ```docker-compose down```
+
 
 ## Integrantes ##
 - <a href="https://github.com/Juanes1516" target="_blank">Juan Esteban Rodríguez Ospino</a>
