@@ -6,3 +6,15 @@ services:
     ports:
       - "8070:8070"
     restart: unless-stopped
+
+  dbpedia-spotlight:
+    image: dbpedia/dbpedia-spotlight
+    container_name: dbpedia-spotlight
+    ports:
+      - "2222:80"
+    restart: unless-stopped
+    volumes:
+      - spotlight-model:/opt/spotlight
+
+volumes:
+  spotlight-model:
