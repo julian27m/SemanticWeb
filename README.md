@@ -46,9 +46,9 @@ Los scripts que requieren la ejecución de los contenedores son: `analisis_pdf.p
 
   2. Instalar Docker Compose en caso de no tenerlo: ```sudo apt install docker-compose``` 
 
-  3. Iniciar el contenedor de Grobid para ejecutar `analisis_pdf.py`: ```sudo docker-compose up -d```
+  3. Iniciar el contenedor de Grobid para ejecutar analisis_pdf.py: ```sudo docker-compose up -d```
   4. Detener el contenedor de Grobid: ```docker-compose down```
-  5. Iniciar el contenedor de DBpedia Spotlight para ejecutar `busqueda_anotaciones.py`: ```docker-compose -f spotlight-compose.yml up -d```
+  5. Iniciar el contenedor de DBpedia Spotlight para ejecutar busqueda_anotaciones.py: ```docker-compose -f spotlight-compose.yml up -d```
   6. Detener el contenedor de Grobid: ```docker-compose -f spotlight-compose.yml stop```
 
 
