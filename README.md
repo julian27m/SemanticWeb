@@ -18,7 +18,7 @@
 - Ejecute el script `data.py` para extraer información de artículos científicos a través del API de Semantic Scholar.
 - Ejecute el script `convertir_json_csv.py` para convertir la información previamente extraida a formato csv.
 - Por último, ejecuta el script `limpieza_datos.py` para realizar la limpieza de los datos.
-- 
+
 ### Notas importantes:
 - Cada consulta de un articulo tiene un time out para evitar que el API rechaze las peticiones por superar el timerate.
 - El tiempo de espera para la descarga de un archivo PDF es de 5 sengundos, si en este tiempo no se ha logrado descargar el archivo se pasará al siguiente artículo.
@@ -33,19 +33,19 @@
 
 Ahora, para realizar adecuadamente esta entrega tuvimos que completar algunos requerimientos de la entrega anterior. Por lo tanto, dentro del archivo `docker-compose.yml`, en la carpeta `Entrega2/`, encontrarán dos contenedores de Docker. 
 
-1. Grobid: Utilizado para extraer más metadatos de los PDFs, como abstract, introducción, palabras clave y conclusiones.
-2. DBpedia Spotlight: Utilizado para anotar las menciones de recursos de DBpedia, dentro de nuestros artículos
+- Grobid: Utilizado para extraer más metadatos de los PDFs, como abstract, introducción, palabras clave y conclusiones.
+- DBpedia Spotlight: Utilizado para anotar las menciones de recursos de DBpedia, dentro de nuestros artículos
 
-Instrucciónes de ejecución:
+Ejecución de los contenedores:
 - Para iniciar ambos contenedores hay que ejecutar los siguientes comandos:
   
-  Navegar a la ruta donde se encuentran los contenedores: ```cd Entrega2```
+  1. Navegar a la ruta donde se encuentran los contenedores: ```cd Entrega2```
 
-  Instalar Docker Compose en caso de no tenerlo: ```sudo apt install docker-compose``` 
+  2. Instalar Docker Compose en caso de no tenerlo: ```sudo apt install docker-compose``` 
 
-  Iniciar los contenedores: ```sudo docker-compose up -d```
+  3. Iniciar los contenedores: ```sudo docker-compose up -d```
 
-  Detener los contenedores: ```docker-compose down```
+  4. Detener los contenedores: ```docker-compose down```
 
 
 ## Integrantes ##
