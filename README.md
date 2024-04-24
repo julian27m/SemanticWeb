@@ -51,6 +51,17 @@ Los scripts que requieren la ejecución de los contenedores son: `analisis_pdf.p
   5. Iniciar el contenedor de DBpedia Spotlight para ejecutar busqueda_anotaciones.py: ```docker-compose -f spotlight-compose.yml up -d```
   6. Detener el contenedor de Grobid: ```docker-compose -f spotlight-compose.yml stop```
 
+### Ejecución de los scripts:
+Para la ejecución de esta entrega se siguieron los pasos descritos a continuación, en orden:
+1. El script `analisis_pdf.py` es utilizado para analizar el CSV de la entrega pasada. Este script utiliza Grobid para extraer metadatos de los PDFs almacenados en la ruta `/DescargasPDFs/`, con el fin de agregarlos como columnas a un nuevo CSV. Los datos extraídos son: Abstract, Introducción, Palabras Clave y Conclusiones. Este script crea el archivo `metadatos.csv` con los nuevos datos extraídos y la información de la entrega pasada.
+2. El script `busqueda_anotaciones.py` recorre el CSV creado en el punto pasado (`metadatos.csv`) y, utilizando DBpedia Spotlight, recopila las entidades relacionadas a los datos de cada artículo. Finalmente, las anotaciones (entidades) recolectadas se agregan como columnas de un nuevo archivo CSV llamado `archivo_entidades.csv`.
+3. El script `crear_ontologia.py` recorre el CSV creado en el punto pasado (`archivo_entidades.csv`) y con base a este, crea la ontología. Al final de este script se serializa y guarda el grafo RDF (`ontologia.rdf`), además, también se crea y se guarda el archivo RDF con la ontología y las inferencias (`inference.rdf`).
+4. Descargar la imagen de neo4j utilizando ```docker pull neo4j```.
+5. Ejecutar el comando ```sudo docker run -it --rm   --publish=7474:7474 --publish=7687:7687 --volume=$HOME/neo4j/data:/data --volume=$HOME/neo4j/logs:/logs --user="$(id -u):$(id -g)"   -e NEO4J_AUTH=none   --env NEO4J_PLUGINS='["apoc","n10s"]'   neo4j:5.5.0```.
+6. Agregar el archivo `inference.rdf` dentro del directorio `/neo4j/data/`.
+7. Acceder a Neo4j a través de http://<ip_maquina>:7474/browser/.
+8. Realizar las consultas en Neo4j.
+
 
 ## Integrantes ##
 - <a href="https://github.com/Juanes1516" target="_blank">Juan Esteban Rodríguez Ospino</a>
