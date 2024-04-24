@@ -31,21 +31,25 @@
    
    ```pip install -r requirements.py```
 
-Ahora, para realizar adecuadamente esta entrega tuvimos que completar algunos requerimientos de la entrega anterior. Por lo tanto, dentro del archivo `docker-compose.yml`, en la carpeta `Entrega2/`, encontrarán dos contenedores de Docker. 
+Ahora, para realizar adecuadamente esta entrega tuvimos que completar algunos requerimientos de la entrega anterior. Por lo tanto, dentro de la carpeta `/Entrega2/` se encuentran el archivo `docker-compose.yml` y `spotlight-compose.yml` los cuales son contenedores de Docker con las imágenes de Grobid y DBpedia Spotlight, respectivamente. 
 
+Usos:
 - Grobid: Utilizado para extraer más metadatos de los PDFs, como abstract, introducción, palabras clave y conclusiones.
-- DBpedia Spotlight: Utilizado para anotar las menciones de recursos de DBpedia, dentro de nuestros artículos
+- DBpedia Spotlight: Utilizado para anotar las menciones de recursos de DBpedia, dentro de nuestros artículos.
 
 Ejecución de los contenedores:
+Los scripts que requieren la ejecución de los contenedores son: `analisis_pdf.py` y `busqueda_anotaciones.py`.
+
 - Para iniciar ambos contenedores hay que ejecutar los siguientes comandos:
   
   1. Navegar a la ruta donde se encuentran los contenedores: ```cd Entrega2```
 
   2. Instalar Docker Compose en caso de no tenerlo: ```sudo apt install docker-compose``` 
 
-  3. Iniciar los contenedores: ```sudo docker-compose up -d```
-
-  4. Detener los contenedores: ```docker-compose down```
+  3. Iniciar el contenedor de Grobid para ejecutar `analisis_pdf.py`: ```sudo docker-compose up -d```
+  4. Detener el contenedor de Grobid: ```docker-compose down```
+  5. Iniciar el contenedor de DBpedia Spotlight para ejecutar `busqueda_anotaciones.py`: ```docker-compose -f spotlight-compose.yml up -d```
+  6. Detener el contenedor de Grobid: ```docker-compose -f spotlight-compose.yml stop```
 
 
 ## Integrantes ##
