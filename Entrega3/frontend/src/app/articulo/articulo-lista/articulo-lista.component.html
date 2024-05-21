@@ -1,0 +1,11 @@
+<div class="articulo-lista-container">
+    <ul>
+      <li *ngFor="let articulo of articulos | paginate: { itemsPerPage: pageSize, currentPage: page }">
+        <h3>{{ articulo.nombre }}</h3>
+        <p>Autor: {{ articulo.nombre_autor || 'Desconocido' }}</p>
+        <a [routerLink]="['/articulo', articulo.id]" class="ver-detalle">Ver Detalles</a>
+      </li>
+    </ul>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
+  

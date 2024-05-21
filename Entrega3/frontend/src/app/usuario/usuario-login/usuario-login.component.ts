@@ -35,7 +35,7 @@ export class UsuarioLoginComponent implements OnInit {
         sessionStorage.setItem('token', res.token);
         sessionStorage.setItem('idUsuario', res.id);
         this.toastrService.success("Login ok", "Información", {closeButton: true});
-        this.router.navigate([`/categorias`])
+        this.router.navigate([`/articulos`])
       },
         error => {
           this.error = "Usuario o contraseña incorrectos";

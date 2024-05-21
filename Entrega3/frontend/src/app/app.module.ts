@@ -8,7 +8,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsuarioModule } from './usuario/usuario.module';
-import { TareaModule } from './tarea/tarea.module';
+import { ArticuloModule } from './articulo/articulo.module';
 
 
 @NgModule({
@@ -22,7 +22,7 @@ import { TareaModule } from './tarea/tarea.module';
     FormsModule,
     ReactiveFormsModule,
     UsuarioModule,
-    TareaModule,
+    ArticuloModule,
     ToastrModule.forRoot({
       timeOut: 7000,
       positionClass: 'toast-bottom-right',

@@ -23,6 +23,7 @@
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.2",
     "icons": "^1.0.0",
+    "ngx-pagination": "^6.0.3",
     "ngx-toastr": "^16.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

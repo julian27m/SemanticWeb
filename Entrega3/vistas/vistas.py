@@ -1,4 +1,4 @@
-from flask import request
+from flask import request, send_file, Blueprint, current_app
 from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identity
 from flask_restful import Resource
 from sqlalchemy.exc import IntegrityError
@@ -7,10 +7,11 @@ import os
 import hashlib
 
 from modelos import db, Usuario, UsuarioSchema, Articulo, ArticuloSchema
-import app
 
 usuario_schema = UsuarioSchema()
 articulo_schema = ArticuloSchema()
+
+vistas_bp = Blueprint('vistas', __name__)
 
 class VistaSignIn(Resource):
     def post(self):
@@ -61,7 +62,7 @@ class VistaArticulos(Resource):
         except UploadNotAllowed:
             return {"mensaje": "No se pudo guardar el archivo. Verifique que es un PDF válido."}, 400
 
-        ruta_completa = os.path.join(app.app.config['UPLOADED_FILES_DEST'], ruta)
+        ruta_completa = os.path.join(current_app.config['UPLOADED_FILES_DEST'], ruta)
 
         nuevo_articulo = Articulo(
             nombre=archivo.filename,
@@ -70,7 +71,6 @@ class VistaArticulos(Resource):
         db.session.add(nuevo_articulo)
         db.session.commit()
         return articulo_schema.dump(nuevo_articulo), 201
-
 
 class VistaArticulo(Resource):
     @jwt_required()
@@ -84,3 +84,10 @@ class VistaArticulo(Resource):
         db.session.delete(articulo)
         db.session.commit()
         return '', 204
+
+# Ruta para descargar archivos PDF
+@vistas_bp.route('/descargar/<path:filename>', methods=['GET'])
+def download_file(filename):
+    base_directory = os.path.join(current_app.root_path, 'DescargasPDFs')
+    file_path = os.path.join(base_directory, filename)
+    return send_file(file_path, as_attachment=True)
