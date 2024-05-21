@@ -2,7 +2,8 @@
   <div class="row align-items-center">
     <div class="col-xs-10 col-lg-5 card px-2 ">
       <div class="card-body text-center">
-        <h2 class="my-2">Semantic Web</h2>
+        <img src="assets/logo_no_name.png" alt="Logo" class="logo">
+        <h2 class="titulo">Meta Web</h2>
         <p class="my-2">Buscador inteligente para artículos cientificos</p>
       </div>
     </div>
@@ -76,11 +77,11 @@
           </div>
 
           <div class="col-12 text-center mt-3">
-            <button type="submit" class="btn btn-warning col-8"
+            <button type="submit" class="btn btn-turquesa col-8"
               [disabled]="!usuarioForm.valid || usuarioForm.get('confirmPassword')?.value !== usuarioForm.get('password')?.value">Registrarse</button>
           </div>
           <div class="col-12 text-center mt-2">
-            <p>¿Ya tienes cuenta? <a href="/">Inicia sesión</a></p>
+            <p>¿Ya tienes cuenta? <a [routerLink]="['/']">Inicia sesión</a></p>
           </div>
 
         </form>

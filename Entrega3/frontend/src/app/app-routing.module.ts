@@ -7,12 +7,13 @@ import { ArticuloCrearComponent } from './articulo/articulo-crear/articulo-crear
 import { ArticuloDetalleComponent } from './articulo/articulo-detalle/articulo-detalle.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: UsuarioLoginComponent },
-  { path: 'registro', component: UsuarioRegistroComponent },
+  { path: 'signin', component: UsuarioRegistroComponent },
   { path: 'articulos', component: ArticuloListaComponent },
-  { path: 'crear-articulo', component: ArticuloCrearComponent },
-  { path: 'articulo/:id', component: ArticuloDetalleComponent }
+  { path: 'articulo/nuevo', component: ArticuloCrearComponent },
+  { path: 'articulo/:id', component: ArticuloDetalleComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/login' }
 ];
 
 @NgModule({

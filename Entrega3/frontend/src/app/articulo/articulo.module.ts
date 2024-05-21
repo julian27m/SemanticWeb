@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms'; 
 import { RouterModule } from '@angular/router';
 import { EncabezadoAppModule } from '../encabezado-app/encabezado-app.module';
 import { ArticuloListaComponent } from './articulo-lista/articulo-lista.component';
@@ -12,6 +12,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    FormsModule, 
     EncabezadoAppModule,
     NgxPaginationModule,
     RouterModule

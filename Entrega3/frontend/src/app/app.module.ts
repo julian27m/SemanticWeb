@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsuarioModule } from './usuario/usuario.module';
 import { ArticuloModule } from './articulo/articulo.module';
+import { EncabezadoAppModule } from './encabezado-app/encabezado-app.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { ArticuloModule } from './articulo/articulo.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    EncabezadoAppModule,
     FormsModule,
     ReactiveFormsModule,
     UsuarioModule,

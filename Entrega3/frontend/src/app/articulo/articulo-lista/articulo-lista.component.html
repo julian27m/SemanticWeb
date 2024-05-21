@@ -1,6 +1,10 @@
 <div class="articulo-lista-container">
+    <div class="search-bar">
+      <input type="text" [(ngModel)]="searchText" placeholder="Buscar artículos..." />
+      <button (click)="buscarArticulos()">Buscar</button>
+    </div>
     <ul>
-      <li *ngFor="let articulo of articulos | paginate: { itemsPerPage: pageSize, currentPage: page }">
+      <li *ngFor="let articulo of articulosFiltrados | paginate: { itemsPerPage: pageSize, currentPage: page }">
         <h3>{{ articulo.nombre }}</h3>
         <p>Autor: {{ articulo.nombre_autor || 'Desconocido' }}</p>
         <a [routerLink]="['/articulo', articulo.id]" class="ver-detalle">Ver Detalles</a>

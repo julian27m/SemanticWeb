@@ -5,7 +5,7 @@ from sqlalchemy.exc import IntegrityError
 from flask_uploads import UploadNotAllowed
 import os
 import hashlib
-
+import app
 from modelos import db, Usuario, UsuarioSchema, Articulo, ArticuloSchema
 
 usuario_schema = UsuarioSchema()

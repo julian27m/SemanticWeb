@@ -2,7 +2,8 @@
   <div class="row align-items-center">
     <div class="col-xs-10 col-lg-5 card px-2 ">
       <div class="card-body text-center">
-        <h2 class="my-2">Semantic Web</h2>
+        <img src="assets/logo_no_name.png" alt="Logo" class="logo">
+        <h2 class="titulo">Meta Web</h2>
         <p class="my-2">Buscador inteligente para artículos cientificos</p>
       </div>
     </div>
@@ -32,10 +33,10 @@
         </div>
         <div class="col-12 text-center mt-3">
           <button (click)="loginUsuario(usuario.value, contrasena.value)" type="button"
-            class="btn btn-info col-8">Ingresar</button>
+            class="btn btn-turquesa col-8">Ingresar</button>
         </div>
         <div class="col-12 text-center mt-2">
-          <p>¿No tienes cuenta? <a href="/registro">Registrate</a></p>
+          <p>¿No tienes cuenta? <a [routerLink]="['/signin']">Registrate</a></p> 
         </div>
       </div>
     </div>

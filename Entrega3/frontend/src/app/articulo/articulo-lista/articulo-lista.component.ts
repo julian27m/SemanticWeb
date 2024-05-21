@@ -9,6 +9,8 @@ import { Articulo } from '../articulo';
 })
 export class ArticuloListaComponent implements OnInit {
   articulos: Articulo[] = [];
+  articulosFiltrados: Articulo[] = [];
+  searchText: string = '';
   page: number = 1;
   pageSize: number = 5; // Número de artículos por página
 
@@ -18,10 +20,23 @@ export class ArticuloListaComponent implements OnInit {
     this.articuloService.darArticulos().subscribe(
       data => {
         this.articulos = data;
+        this.articulosFiltrados = data; // Inicialmente mostrar todos los artículos
       },
       error => {
         console.error('Error al obtener artículos', error);
       }
     );
+  }
+
+  buscarArticulos(): void {
+    if (this.searchText) {
+      this.articulosFiltrados = this.articulos.filter(articulo =>
+        articulo.nombre.toLowerCase().includes(this.searchText.toLowerCase()) ||
+        articulo.nombre_autor?.toLowerCase().includes(this.searchText.toLowerCase())
+      );
+    } else {
+      this.articulosFiltrados = this.articulos; // Mostrar todos los artículos si no hay búsqueda
+    }
+    this.page = 1; // Reiniciar a la primera página de resultados
   }
 }

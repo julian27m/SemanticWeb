@@ -9,6 +9,9 @@ from vistas import VistaSignIn, VistaLogIn, VistaArticulos, VistaArticulo, vista
 
 import os
 
+# Extender DOCUMENTS para incluir pdf
+DOCUMENTS += ('pdf',)
+
 # Configuración de Flask
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dbapp.sqlite'

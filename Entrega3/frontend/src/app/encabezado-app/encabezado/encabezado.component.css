@@ -1,0 +1,18 @@
+.logo {
+    width: 80px;  
+    height: 80px;  
+  }
+  
+  .navbar-nav .nav-item .nav-link {
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .navbar-nav .nav-item .nav-link:hover {
+    color: #0056b3;
+  }
+  
+  .navbar {
+    padding: 10px 20px;
+  }
+  

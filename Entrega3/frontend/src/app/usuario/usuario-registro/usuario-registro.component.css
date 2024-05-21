@@ -1,0 +1,20 @@
+.logo {
+    width: 200px;  
+    height: 200px;  
+  }
+
+  .titulo {
+    color: #0c203d;
+  }
+
+  .btn-turquesa {
+    background-color: #40E0D0;
+    border-color: #40E0D0;
+    color: black;
+  }
+  
+  .btn-turquesa:hover {
+    background-color: #33c1b0;
+    border-color: #33c1b0;
+  }
+  
