@@ -8,6 +8,7 @@ from modelos import db, Usuario, Articulo
 from vistas import VistaSignIn, VistaLogIn, VistaArticulos, VistaArticulo, vistas_bp
 
 import os
+import random
 
 # Extender DOCUMENTS para incluir pdf
 DOCUMENTS += ('pdf',)
@@ -62,11 +63,15 @@ with app.app_context():
             if autor_id and not Usuario.query.get(autor_id):
                 autor_id = None
             
+            referencias = random.sample([art['nombre'] for art in articulos if art != articulo_info], 2)  # Selecciona 2 referencias aleatorias
+            referencias_str = ", ".join(referencias)
+            
             articulo = Articulo(
                 nombre=articulo_info["nombre"],
                 ruta_pdf=articulo_info["ruta_pdf"],
                 autor_id=autor_id,
-                nombre_autor=articulo_info.get("nombre_autor", None)
+                nombre_autor=articulo_info.get("nombre_autor", None),
+                referencias=referencias_str
             )
             db.session.add(articulo)
 

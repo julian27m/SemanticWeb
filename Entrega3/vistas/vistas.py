@@ -6,6 +6,7 @@ from flask_uploads import UploadNotAllowed
 import os
 import hashlib
 import app
+
 from modelos import db, Usuario, UsuarioSchema, Articulo, ArticuloSchema
 
 usuario_schema = UsuarioSchema()
@@ -69,7 +70,12 @@ class VistaArticulos(Resource):
             ruta_pdf=ruta_completa
         )
         db.session.add(nuevo_articulo)
-        db.session.commit()
+        try:
+            db.session.commit()
+        except IntegrityError:
+            db.session.rollback()
+            return {"mensaje": "El artículo ya existe"}, 400
+
         return articulo_schema.dump(nuevo_articulo), 201
 
 class VistaArticulo(Resource):

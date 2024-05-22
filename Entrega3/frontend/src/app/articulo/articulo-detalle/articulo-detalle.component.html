@@ -2,6 +2,17 @@
     <h2>{{ articulo.nombre }}</h2>
     <p><strong>Autor:</strong> {{ articulo.nombre_autor || 'Desconocido' }}</p>
     <p><strong>Ruta:</strong> {{ articulo.ruta_pdf }}</p>
+    <div *ngIf="referenciasList.length > 0">
+        <h3>Referencias:</h3>
+        <ul>
+          <li *ngFor="let referencia of referenciasList">
+            <a [routerLink]="['/articulo', referencia.id]">{{ referencia.nombre }}</a>
+          </li>
+        </ul>
+      </div>
+
     <a [href]="getRutaPdf(articulo.ruta_pdf)" class="ver-pdf">Descargar PDF</a>
+  
+    
   </div>
   

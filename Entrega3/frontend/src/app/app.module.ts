@@ -11,7 +11,6 @@ import { UsuarioModule } from './usuario/usuario.module';
 import { ArticuloModule } from './articulo/articulo.module';
 import { EncabezadoAppModule } from './encabezado-app/encabezado-app.module';
 
-
 @NgModule({
   declarations: [
     AppComponent

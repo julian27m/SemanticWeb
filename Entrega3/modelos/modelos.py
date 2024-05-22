@@ -15,7 +15,8 @@ class Articulo(db.Model):
     autor_id = db.Column(db.Integer, db.ForeignKey('usuario.id'), nullable=True)
     autor = db.relationship('Usuario', backref=db.backref('articulos', lazy=True))
     nombre_autor = db.Column(db.String(128), nullable=True)  # Nombre del autor, si no es un usuario registrado
-
+    referencias = db.Column(db.String(1024), nullable=True)  # Referencias, en formato CSV
+    
 class UsuarioSchema(SQLAlchemyAutoSchema):
     class Meta:
         model = Usuario
