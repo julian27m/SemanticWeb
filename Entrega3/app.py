@@ -10,6 +10,7 @@ from vistas import VistaSignIn, VistaLogIn, VistaArticulos, VistaArticulo, vista
 import os
 import random
 
+
 # Extender DOCUMENTS para incluir pdf
 DOCUMENTS += ('pdf',)
 
