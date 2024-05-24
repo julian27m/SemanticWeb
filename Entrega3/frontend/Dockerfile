@@ -1,5 +1,5 @@
 # Dockerfile para el frontend
-FROM node:16-alpine
+FROM node:18
 
 # Establecer el directorio de trabajo
 WORKDIR /app
@@ -12,7 +12,7 @@ RUN npm install
 RUN npm install -g @angular/cli
 
 # Construir la aplicación Angular
-RUN ng build --prod
+RUN ng build --configuration production
 
 # Instalar un servidor HTTP simple para servir los archivos estáticos
 RUN npm install -g http-server
@@ -21,4 +21,4 @@ RUN npm install -g http-server
 EXPOSE 8080
 
 # Comando para correr la aplicación
-CMD ["http-server", "dist/frontend", "-p", "8080"]
+CMD ["http-server", "dist/proyecto-frontend", "-p", "8080"]
