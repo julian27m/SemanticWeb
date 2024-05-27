@@ -5,6 +5,7 @@
 <p align="center">
   <a href="#entrega-1">Entrega 1</a> &#xa0; | &#xa0; 
   <a href="#entrega-2">Entrega 2</a> &#xa0; | &#xa0;
+  <a href="#entrega-3">Entrega 3</a> &#xa0; | &#xa0;
   <a href="#integrantes">Integrantes</a> &#xa0; | &#xa0;
 </p>
 
@@ -69,10 +70,21 @@ Los directorios `/DescargasPDFs/` y `/CSVs/` fueron agregados al .gitignore debi
 - En el directorio `/CSVs/` guardamos todos los archivos .csv en los que trabajamos y modificamos la base de datos final (`archivo_entidades.csv`).
 - `archivo_entidades.csv` es el CSV final con los metadatos y las anotaciones de todos los artículos. Debido a su tamaño no lo incluimos en el repositorio pero pueden acceder a este en el siguiente enlace: https://uniandes-my.sharepoint.com/:f:/g/personal/j_morav_uniandes_edu_co/EtyGIwSlHRJGk8Psf7ynRnUBdixntIyTdwqw6p_ZaCjWZQ?e=MHixBb 
 
+## Entrega 3 ##
+### Instrucciones de ejecución:
+
+El proyecto se encuentra montado dentro de una screen en la MV asignada, en el puerto 8080. Por lo que, para acceder a la página se debe hacer en una máquina dentro del dominio de la Universidad de Los Andes, usando la ruta: 172.24.99.90:8080.
+
+- Para ejecutar el código de manera local, primero debe instalar las bibliotecas necesarias. Puede hacer esto ejecutando el siguiente comando:
+   
+   ```pip install -r requirements.py```
+- Además, se debe cambiar la variable Api dentro de enviroment.ts.
+- Luego, el backend se corre en el directorio Entrega3 con el comando ```flask run```.
+- Finalmente, el frontend se corre en el directorio Entrega3/frontend usando el comando ```ng serve```
+
 
 ## Integrantes ##
 - <a href="https://github.com/Juanes1516" target="_blank">Juan Esteban Rodríguez Ospino</a>
 - <a href="https://github.com/julian27m/" target="_blank">Julián Camilo Mora Valbuena</a>
-- <a href="https://github.com/andreapapadron/" target="_blank">Andrea Vega</a>
 
 
