@@ -152,6 +152,6 @@ owl_reasoner = owlrl.CombinedClosure.RDFS_OWLRL_Semantics(g, False, False, False
 owl_reasoner.closure()
 owl_reasoner.flush_stored_triples()
 
-with open("inference.rdf", "w", encoding="utf-8") as f:
-    f.write(g.serialize(format='n3'))
+with open("inference.ttl", "w", encoding="utf-8") as f:
+    f.write(g.serialize(format='ttl'))
 
