@@ -7,6 +7,9 @@ Entrega2/DescargasPDFs/
 #Ignorar CSVs por su tamaño
 Entrega2/CSVs/
 
+#Ignorar CSVs por su tamaño
+Entrega2/archivo_entidades.csv
+
 # Environments
 .env
 .venv

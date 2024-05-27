@@ -5,31 +5,37 @@ import json
 import urllib
 import owlrl
 
-
-# Definir los prefijos de los espacios de nombres RDF/OWL
-paper = Namespace("http://example.org/paper#")
-persona = Namespace("http://example.org/persona#")
-url_namespace = Namespace("http://example.org/semanticUrl#")
-id_namespace = Namespace("http://example.org/id#")
-abstract = Namespace("http://example.org/abstract#")
-introduccion = Namespace("http://example.org/introduccion#")
-keywords = Namespace("http://example.org/keywords#")
-citation = Namespace("http://example.org/citation#")
-doi = Namespace("http://example.org/doi#")
-paperId = Namespace("http://example.org/paperId#")
-venue = Namespace("http://example.org/venue#")
-url = Namespace("http://example.org/url#")
-year = Namespace("http://example.org/year#")
-influentialCitationCount = Namespace("http://example.org/influentialCitationCount#")
-isOpenAccess = Namespace("http://example.org/isOpenAccess#")
-isPublisherLicensed = Namespace("http://example.org/isPublisherLicensed#")
-conceptAnotation = Namespace("http://example.org/conceptAnotation#")
+# Definir un único espacio de nombres para todas las clases y propiedades
+ns = Namespace("http://example.org/ontology#")
 
 # Crear un grafo RDF
 g = Graph()
 
+# Definir las clases en el espacio de nombres
+g.add((ns.Paper, RDF.type, RDFS.Class))
+g.add((ns.Persona, RDF.type, RDFS.Class))
+g.add((ns.Anotacion, RDF.type, RDFS.Class))
+
+# Definir las propiedades en el espacio de nombres
+g.add((ns.autor, RDF.type, RDF.Property))
+g.add((ns.references, RDF.type, RDF.Property))
+g.add((ns.authorId, RDF.type, RDF.Property))
+g.add((ns.semanticUrl, RDF.type, RDF.Property))
+g.add((ns.conceptAnotation, RDF.type, RDF.Property))
+g.add((ns.tieneAbstract, RDF.type, RDF.Property))
+g.add((ns.tieneIntroduccion, RDF.type, RDF.Property))
+g.add((ns.tieneKeyWords, RDF.type, RDF.Property))
+g.add((ns.tieneCitationVelocity, RDF.type, RDF.Property))
+g.add((ns.tieneDOI, RDF.type, RDF.Property))
+g.add((ns.tienePaperId, RDF.type, RDF.Property))
+g.add((ns.tieneVenue, RDF.type, RDF.Property))
+g.add((ns.tieneAñoPublicacion, RDF.type, RDF.Property))
+g.add((ns.tieneInfluentialCitationCount, RDF.type, RDF.Property))
+g.add((ns.tieneIsOpenAccess, RDF.type, RDF.Property))
+g.add((ns.tieneIsPublisherLicensed, RDF.type, RDF.Property))
+
 # Leer el archivo CSV
-df = pd.read_csv('CSVs/archivo_entidades.csv')
+df = pd.read_csv('C:\\Users\\juane\\OneDrive\\Documentos\\Universidad\\Semantic\\SemanticWeb\\Entrega2\\archivo_entidades.csv')
 
 # Función para convertir la cadena en una lista de diccionarios y extraer el título de cada referencia
 def extract_reference_titles(references_str):
@@ -42,139 +48,110 @@ df['reference_titles'] = df['references'].apply(extract_reference_titles)
 
 # Función para convertir la cadena en una lista de diccionarios y extraer el nombre, el authorId y la URL de cada autor en la lista
 def extract_author_info(authors_str):
-    authors_list = ast.literal_eval(authors_str)  # Convertir la cadena en una lista de diccionarios
+    authors_list = json.loads(authors_str)  # Convertir la cadena en una lista de diccionarios
     author_info = [(author['name'], author['authorId'], author['url']) for author in authors_list]
     return author_info
 
 # Aplicar la función a cada fila de la columna 'authors' y crear una nueva columna 'author_info'
 df['author_info'] = df['authors'].apply(extract_author_info)
 
+count = 0
 # Iterar sobre cada fila del DataFrame
 for index, row in df.iterrows():
+    count += 1
+    print(count)
     # Crear un URI para el paper basado en su título
     cleaned_title = urllib.parse.quote(row['title'].replace('"', ''))  # Remover las comillas dobles y codificar la cadena
-    paper_uri = paper[cleaned_title.replace(" ", "_")]
+    paper_uri = ns[cleaned_title.replace(" ", "_")]
 
     # Restricciones de dominio y rango
-    g.add((paper.citationVelocity, RDFS.domain, paper.Paper))
-    g.add((paper.citationVelocity, RDFS.range, XSD.integer))
+    g.add((ns.citationVelocity, RDFS.domain, ns.Paper))
+    g.add((ns.citationVelocity, RDFS.range, XSD.integer))
 
-    g.add((paper.doi, RDFS.domain, paper.Paper))
-    g.add((paper.doi, RDFS.range, XSD.string))
-
-    g.add((paper.paperId, RDFS.domain, paper.Paper))
-    g.add((paper.paperId, RDFS.range, XSD.string))
-
-    g.add((paper.venue, RDFS.domain, paper.Paper))
-    g.add((paper.venue, RDFS.range, XSD.string))
-
-    g.add((paper.year, RDFS.domain, paper.Paper))
-    g.add((paper.year, RDFS.range, XSD.integer))
-
-    g.add((paper.influentialCitationCount, RDFS.domain, paper.Paper))
-    g.add((paper.influentialCitationCount, RDFS.range, XSD.integer))
-
-    g.add((paper.isOpenAccess, RDFS.domain, paper.Paper))
-    g.add((paper.isOpenAccess, RDFS.range, XSD.boolean))
-
-    g.add((paper.isPublisherLicensed, RDFS.domain, paper.Paper))
-    g.add((paper.isPublisherLicensed, RDFS.range, XSD.boolean))
-
-    g.add((paper.semanticUrl, RDFS.domain, paper.Paper))
-    g.add((paper.semanticUrl, RDFS.range, XSD.string))
-
-    g.add((paper.yearPublicacion, RDFS.domain, paper.Paper))
-    g.add((paper.yearPublicacion, RDFS.range, XSD.integer))
+    # Continuar con la definición de restricciones para las otras propiedades y clases
 
     # Para cada autor en la lista de autores de esta fila
     for author_name, author_id, url in row['author_info']:
         # Crear un URI para la persona basado en su nombre
-        persona_uri = persona[author_name.replace(" ", "_")]
+        persona_uri = ns[author_name.replace(" ", "_")]
 
         # Agregar tripletas al grafo RDF
-        g.add((paper_uri, RDF.type, paper.Paper))
-        g.add((persona_uri, RDF.type, persona.Persona))
-        g.add((paper_uri, paper.autor, persona_uri))
+        g.add((paper_uri, RDF.type, ns.Paper))
+        g.add((persona_uri, RDF.type, ns.Persona))
+        g.add((paper_uri, ns.autor, persona_uri))
         
         # Agregar la tripleta para el ID de la persona como DataProperty
-        g.add((persona_uri, id_namespace['authorId'], Literal(author_id)))
-        g.add((id_namespace['authorId'], RDF.type, RDF.Property))
-        g.add((id_namespace['authorId'], RDFS.domain, persona.Persona))
-        g.add((id_namespace['authorId'], RDFS.range, XSD.string))
+        g.add((persona_uri, ns.authorId, Literal(author_id)))
+        g.add((ns.authorId, RDF.type, RDF.Property))
+        g.add((ns.authorId, RDFS.domain, ns.Persona))
+        g.add((ns.authorId, RDFS.range, XSD.string))
         
         # Agregar la tripleta para la URL semántica de la persona como DataProperty
-        g.add((persona_uri, url_namespace['semanticUrl'], Literal(url)))
-        g.add((url_namespace['semanticUrl'], RDF.type, RDF.Property))
-        g.add((url_namespace['semanticUrl'], RDFS.domain, persona.Persona))
-        g.add((url_namespace['semanticUrl'], RDFS.range, XSD.string))
+        g.add((persona_uri, ns.semanticUrl, Literal(url)))
+        g.add((ns.semanticUrl, RDF.type, RDF.Property))
+        g.add((ns.semanticUrl, RDFS.domain, ns.Persona))
+        g.add((ns.semanticUrl, RDFS.range, XSD.string))
     
     # Establecer relaciones entre el papel actual y cada título de referencia
     for ref_title in row['reference_titles']:
         cleaned_ref_title = urllib.parse.quote(ref_title.replace('"', ''))
-        ref_paper_uri = paper[cleaned_ref_title.replace(" ", "_")]
+        ref_paper_uri = ns[cleaned_ref_title.replace(" ", "_")]
         
-        g.add((paper_uri, paper.references, ref_paper_uri))
+        g.add((paper_uri, ns.references, ref_paper_uri))
     
-    # Agregar la tripleta Paper-tieneAbstract-Abstract
+    # Agregar las tripletas para las columnas restantes
+    
+    # Agregar las tripletas para los data properties
     paper_abstract = Literal(row['abstract'])
-    g.add((paper_uri, abstract.tieneAbstract, paper_abstract))
+    g.add((paper_uri, ns.tieneAbstract, paper_abstract))
     
-    # Agregar la tripleta Paper-tieneIntroduccion-Introduccion
     paper_introduccion = Literal(row['introduction'])
-    g.add((paper_uri, introduccion.tieneIntroduccion, paper_introduccion))
+    g.add((paper_uri, ns.tieneIntroduccion, paper_introduccion))
     
-    # Agregar la tripleta Paper-tieneKeyWords-KeyWords
     paper_keywords = Literal(row['keywords'])
-    g.add((paper_uri, keywords.tieneKeyWords, paper_keywords))
+    g.add((paper_uri, ns.tieneKeyWords, paper_keywords))
     
-    # Agregar la tripleta Paper-tieneCitationVelocity-CitationVelocity
     paper_citation_velocity = Literal(row['citationVelocity'])
-    g.add((paper_uri, citation.tieneCitationVelocity, paper_citation_velocity))
+    g.add((paper_uri, ns.tieneCitationVelocity, paper_citation_velocity))
     
-    # Agregar la tripleta Paper-tieneDOI-DOI
     paper_doi = Literal(row['doi'])
-    g.add((paper_uri, doi.tieneDOI, paper_doi))
+    g.add((paper_uri, ns.tieneDOI, paper_doi))
     
-    # Agregar la tripleta Paper-tienePaperId-PaperId
     paper_paper_id = Literal(row['paperId'])
-    g.add((paper_uri, paperId.tienePaperId, paper_paper_id))
+    g.add((paper_uri, ns.tienePaperId, paper_paper_id))
     
-    # Agregar la tripleta Paper-tieneVenue-Venue
     paper_venue = Literal(row['venue'])
-    g.add((paper_uri, venue.tieneVenue, paper_venue))
+    g.add((paper_uri, ns.tieneVenue, paper_venue))
     
-    # Agregar la tripleta Paper-tieneAñoPublicacion-AñoPublicacion
     paper_year = Literal(row['year'])
-    g.add((paper_uri, year.tieneAñoPublicacion, paper_year))
+    g.add((paper_uri, ns.tieneAñoPublicacion, paper_year))
     
-    # Agregar la tripleta Paper-tieneInfluentialCitationCount-InfluentialCitationCount
     paper_influential_citation_count = Literal(row['influentialCitationCount'])
-    g.add((paper_uri, influentialCitationCount.tieneInfluentialCitationCount, paper_influential_citation_count))
+    g.add((paper_uri, ns.tieneInfluentialCitationCount, paper_influential_citation_count))
     
-    # Agregar la tripleta Paper-tieneIsOpenAccess-IsOpenAccess
     paper_is_open_access = Literal(row['isOpenAccess'])
-    g.add((paper_uri, isOpenAccess.tieneIsOpenAccess, paper_is_open_access))
+    g.add((paper_uri, ns.tieneIsOpenAccess, paper_is_open_access))
     
-    # Agregar la tripleta Paper-tieneIsPublisherLicensed-IsPublisherLicensed
     paper_is_publisher_licensed = Literal(row['isPublisherLicensed'])
-    g.add((paper_uri, isPublisherLicensed.tieneIsPublisherLicensed, paper_is_publisher_licensed))
-    
-    # Agregar las tripletas para la columna 'entities_found'
+    g.add((paper_uri, ns.tieneIsPublisherLicensed, paper_is_publisher_licensed))
+
+    # Agregar las tripletas para las entidades encontradas con ConceptAnotation
     entities = ast.literal_eval(row['entities_found'])
     for entity in entities:
-        g.add((paper_uri, conceptAnotation.conceptAnotation, Literal(entity)))
-    
+        entity_uri = ns[entity.replace(" ", "_")]
+        g.add((entity_uri, RDF.type, ns.Anotacion))
+        g.add((paper_uri, ns.conceptAnotation, entity_uri))
 
 # Serializar y guardar el grafo RDF en un archivo en formato Turtle
 g.serialize(destination='ontologia.rdf', format='n3')
 
 print("Listo sin inferir")
 
-#Inferir tuplas
+# Inferir tuplas
 owl_reasoner = owlrl.CombinedClosure.RDFS_OWLRL_Semantics(g, False, False, False)
 owl_reasoner.closure()
 owl_reasoner.flush_stored_triples()
 
-with open("inference.rdf", "w") as f:
+with open("inference.rdf", "w", encoding="utf-8") as f:
     f.write(g.serialize(format='n3'))
 

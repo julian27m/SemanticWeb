@@ -1,88 +1,181 @@
-@prefix paper: <http://example.org/paper#> .
-@prefix persona: <http://example.org/persona#> .
-@prefix url_namespace: <http://example.org/semanticUrl#> .
-@prefix id_namespace: <http://example.org/id#> .
-@prefix abstract: <http://example.org/abstract#> .
-@prefix introduccion: <http://example.org/introduccion#> .
-@prefix keywords: <http://example.org/keywords#> .
-@prefix citation: <http://example.org/citation#> .
-@prefix doi: <http://example.org/doi#> .
-@prefix paperId: <http://example.org/paperId#> .
-@prefix venue: <http://example.org/venue#> .
-@prefix year: <http://example.org/year#> .
-@prefix influentialCitationCount: <http://example.org/influentialCitationCount#> .
-@prefix isOpenAccess: <http://example.org/isOpenAccess#> .
-@prefix isPublisherLicensed: <http://example.org/isPublisherLicensed#> .
-@prefix conceptAnotation: <http://example.org/conceptAnotation#> .
+@prefix ns: <http://example.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# Clases
-paper:Paper a rdfs:Class .
-persona:Persona a rdfs:Class .
+# Classes
+ns:Anotacion rdf:type owl:Class ;
+    rdfs:comment "Clase que representa una anotación." .
 
-# Propiedades
-paper:autor a rdf:Property ;
-    rdfs:domain persona:Persona ;
-    rdfs:range paper:Paper .
+ns:Paper rdf:type owl:Class ;
+    rdfs:comment "Clase que representa un documento de investigación." .
 
-id_namespace:authorId a rdf:Property ;
-    rdfs:domain persona:Persona ;
+ns:Persona rdf:type owl:Class ;
+    rdfs:comment "Clase que representa a una persona." .
+
+# Data Properties
+ns:authorId rdf:type owl:DatatypeProperty ;
+    rdfs:domain ns:Persona ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Propiedad que representa el identificador único de una persona." .
+
+ns:citationVelocity rdf:type owl:DatatypeProperty ;
+    rdfs:domain ns:Paper ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Propiedad que representa la velocidad de citación de un documento." .
+
+ns:conceptAnotation rdf:type owl:DatatypeProperty ;
+    rdfs:domain ns:Paper ;
+    rdfs:range ns:Anotacion ;
+    rdfs:comment "Propiedad que indica las anotaciones asociadas a un documento." .
+
+ns:doi rdf:type owl:DatatypeProperty ;
+    rdfs:domain ns:Paper ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Propiedad que representa el DOI (Digital Object Identifier) de un documento." .
+
+ns:hasAbstract rdf:type owl:DatatypeProperty ;
+    rdfs:domain ns:Paper ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Propiedad que indica el abstract de un documento." .
+
+ns:hasAñoPublicacion rdf:type owl:DatatypeProperty ;
+    rdfs:domain ns:Paper ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Propiedad que representa el año de publicación de un documento." .
+
+ns:hasCitationVelocity rdf:type owl:DatatypeProperty ;
+    rdfs:domain ns:Paper ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Propiedad que representa la velocidad de citación de un documento." .
+
+ns:hasDOI rdf:type owl:DatatypeProperty ;
+    rdfs:domain ns:Paper ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Propiedad que representa el DOI (Digital Object Identifier) de un documento." .
+
+ns:hasInfluentialCitationCount rdf:type owl:DatatypeProperty ;
+    rdfs:domain ns:Paper ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Propiedad que indica el conteo de citas influyentes de un documento." .
+
+ns:hasIntroduccion rdf:type owl:DatatypeProperty ;
+    rdfs:domain ns:Paper ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Propiedad que indica la introducción de un documento." .
+
+ns:hasIsOpenAccess rdf:type owl:DatatypeProperty ;
+    rdfs:domain ns:Paper ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Propiedad que indica si un documento es de acceso abierto." .
+
+ns:hasIsPublisherLicensed rdf:type owl:DatatypeProperty ;
+    rdfs:domain ns:Paper ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Propiedad que indica si un documento está licenciado por un editor." .
+
+ns:hasKeyWords rdf:type owl:DatatypeProperty ;
+    rdfs:domain ns:Paper ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Propiedad que indica las palabras clave de un documento." .
+
+ns:hasPaperId rdf:type owl:DatatypeProperty ;
+    rdfs:domain ns:Paper ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Propiedad que representa el ID de un documento." .
+
+ns:hasVenue rdf:type owl:DatatypeProperty ;
+    rdfs:domain ns:Paper ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Propiedad que representa el lugar de publicación de un documento." .
+
+ns:semanticUrl rdf:type owl:DatatypeProperty ;
+    rdfs:domain ns:Persona ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Propiedad que representa la URL semántica asociada a una persona." .
+
+# Object Properties
+ns:autor rdf:type owl:ObjectProperty ;
+    rdfs:domain ns:Paper ;
+    rdfs:range ns:Persona ;
+    rdfs:comment "Propiedad que relaciona un documento con su autor." .
+
+ns:references rdf:type owl:ObjectProperty ;
+    rdfs:domain ns:Paper ;
+    rdfs:range ns:Paper ;
+    rdfs:comment "Propiedad que representa las referencias de un documento." .
+
+# Domain and Range Restrictions
+ns:authorId rdfs:domain ns:Persona ;
     rdfs:range xsd:string .
 
-url_namespace:semanticUrl a rdf:Property ;
-    rdfs:domain persona:Persona ;
-    rdfs:range xsd:string .
-
-paper:references a rdf:Property ;
-    rdfs:domain paper:Paper ;
-    rdfs:range paper:Paper .
-
-abstract:tieneAbstract a rdf:Property ;
-    rdfs:domain paper:Paper ;
-    rdfs:range xsd:string .
-
-introduccion:tieneIntroduccion a rdf:Property ;
-    rdfs:domain paper:Paper ;
-    rdfs:range xsd:string .
-
-keywords:tieneKeyWords a rdf:Property ;
-    rdfs:domain paper:Paper ;
-    rdfs:range xsd:string .
-
-citation:tieneCitationVelocity a rdf:Property ;
-    rdfs:domain paper:Paper ;
+ns:citationVelocity rdfs:domain ns:Paper ;
     rdfs:range xsd:integer .
 
-doi:tieneDOI a rdf:Property ;
-    rdfs:domain paper:Paper ;
+ns:conceptAnotation rdfs:domain ns:Paper ;
+    rdfs:range ns:Anotacion .
+
+ns:doi rdfs:domain ns:Paper ;
     rdfs:range xsd:string .
 
-paperId:tienePaperId a rdf:Property ;
-    rdfs:domain paper:Paper ;
+ns:hasAbstract rdfs:domain ns:Paper ;
     rdfs:range xsd:string .
 
-venue:tieneVenue a rdf:Property ;
-    rdfs:domain paper:Paper ;
-    rdfs:range xsd:string .
-
-year:tieneAñoPublicacion a rdf:Property ;
-    rdfs:domain paper:Paper ;
+ns:hasAñoPublicacion rdfs:domain ns:Paper ;
     rdfs:range xsd:integer .
 
-influentialCitationCount:tieneInfluentialCitationCount a rdf:Property ;
-    rdfs:domain paper:Paper ;
+ns:hasCitationVelocity rdfs:domain ns:Paper ;
     rdfs:range xsd:integer .
 
-isOpenAccess:tieneIsOpenAccess a rdf:Property ;
-    rdfs:domain paper:Paper ;
+ns:hasDOI rdfs:domain ns:Paper ;
+    rdfs:range xsd:string .
+
+ns:hasInfluentialCitationCount rdfs:domain ns:Paper ;
+    rdfs:range xsd:integer .
+
+ns:hasIntroduccion rdfs:domain ns:Paper ;
+    rdfs:range xsd:string .
+
+ns:hasIsOpenAccess rdfs:domain ns:Paper ;
     rdfs:range xsd:boolean .
 
-isPublisherLicensed:tieneIsPublisherLicensed a rdf:Property ;
-    rdfs:domain paper:Paper ;
+ns:hasIsPublisherLicensed rdfs:domain ns:Paper ;
     rdfs:range xsd:boolean .
 
-conceptAnotation:conceptAnotation a rdf:Property ;
-    rdfs:domain paper:Paper ;
+ns:hasKeyWords rdfs:domain ns:Paper ;
     rdfs:range xsd:string .
+
+ns:hasPaperId rdfs:domain ns:Paper ;
+    rdfs:range xsd:string .
+
+ns:hasVenue rdfs:domain ns:Paper ;
+    rdfs:range xsd:string .
+
+ns:semanticUrl rdfs:domain ns:Persona ;
+    rdfs:range xsd:string .
+
+ns:autor rdfs:domain ns:Paper ;
+    rdfs:range ns:Persona .
+
+ns:references rdfs:domain ns:Paper ;
+    rdfs:range ns:Paper .
+
+# Cardinality Restrictions
+
+# Cardinality Restrictions
+ns:Paper owl:hasAbstract xsd:string[1,1] ;
+         owl:hasIntroduccion xsd:string[1,1] ;
+         owl:hasKeyWords xsd:string[1,*] ;
+         owl:hasCitationVelocity xsd:integer[1,1] ;
+         owl:hasDOI xsd:string[1,1] ;
+         owl:hasPaperId xsd:string[1,1] ;
+         owl:hasVenue xsd:string[1,1] ;
+         owl:hasAñoPublicacion xsd:integer[1,1] ;
+         owl:hasInfluentialCitationCount xsd:integer[0,1] ;
+         owl:hasIsOpenAccess xsd:boolean[1,1] ;
+         owl:hasIsPublisherLicensed xsd:boolean[1,1] ;
+         owl:references ns:Paper[0,*] .
+
+ns:Persona owl:authorId xsd:string[1,1] ;
+           owl:semanticUrl xsd:string[1,1] .

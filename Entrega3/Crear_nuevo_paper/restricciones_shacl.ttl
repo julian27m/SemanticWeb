@@ -1,0 +1,63 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ns: <http://example.org/ontology#> .
+
+# Restricción para asegurar que cada Paper tenga exactamente un abstract.
+ns:PaperShape
+    a sh:NodeShape ;
+    sh:targetClass ns:Paper ;
+    sh:property [
+        sh:path ns:hasAbstract ;
+        sh:maxCount 1 ;
+        sh:minCount 1 ;
+    ] .
+
+# Restricción para asegurar que cada Paper tenga un DOI único.
+ns:UniqueDOIShape
+    a sh:NodeShape ;
+    sh:targetClass ns:Paper ;
+    sh:property [
+        sh:path ns:hasDOI ;
+        sh:maxCount 1 ;
+        sh:minCount 1 ;
+        sh:uniqueLang true ;
+    ] .
+
+# Restricción para asegurar que cada Paper tenga al menos una keyword.
+ns:KeywordsShape
+    a sh:NodeShape ;
+    sh:targetClass ns:Paper ;
+    sh:property [
+        sh:path ns:hasKeyWords ;
+        sh:minCount 1 ;
+    ] .
+
+# Restricción para asegurar que la velocidad de citación de un Paper sea un número entero positivo.
+ns:CitationVelocityShape
+    a sh:NodeShape ;
+    sh:targetClass ns:Paper ;
+    sh:property [
+        sh:path ns:hasCitationVelocity ;
+        sh:minInclusive 0 ;
+        sh:datatype xsd:integer ;
+    ] .
+
+# Restricción para asegurar que el año de publicación de un Paper sea un número entero positivo.
+ns:PublicationYearShape
+    a sh:NodeShape ;
+    sh:targetClass ns:Paper ;
+    sh:property [
+        sh:path ns:hasAñoPublicacion ;
+        sh:minInclusive 0 ;
+        sh:datatype xsd:integer ;
+    ] .
+
+# Restricción para asegurar que el identificador de un Paper sea único.
+ns:UniquePaperIdShape
+    a sh:NodeShape ;
+    sh:targetClass ns:Paper ;
+    sh:property [
+        sh:path ns:hasPaperId ;
+        sh:maxCount 1 ;
+        sh:minCount 1 ;
+        sh:uniqueLang true ;
+    ] .

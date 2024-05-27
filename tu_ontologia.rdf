@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://example.org/ontology#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://example.org/papers/paper123">
+    <rdf:type rdf:resource="http://example.org/ontology#Paper"/>
+    <ns1:hasAbstract>Este es el abstract del nuevo paper</ns1:hasAbstract>
+    <ns1:hasIntroduccion>Introducción del nuevo paper</ns1:hasIntroduccion>
+    <ns1:hasKeyWords>keyword1, keyword2</ns1:hasKeyWords>
+    <ns1:hasCitationVelocity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</ns1:hasCitationVelocity>
+    <ns1:hasDOI>doi_del_nuevo_paper</ns1:hasDOI>
+    <ns1:hasPaperId>paper123</ns1:hasPaperId>
+    <ns1:hasVenue>Venue del nuevo paper</ns1:hasVenue>
+    <ns1:hasAñoPublicacion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2023</ns1:hasAñoPublicacion>
+    <ns1:hasIsOpenAccess rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns1:hasIsOpenAccess>
+    <ns1:hasIsPublisherLicensed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ns1:hasIsPublisherLicensed>
+  </rdf:Description>
+</rdf:RDF>
