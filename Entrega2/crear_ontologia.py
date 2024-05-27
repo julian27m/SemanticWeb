@@ -35,7 +35,7 @@ g.add((ns.tieneIsOpenAccess, RDF.type, RDF.Property))
 g.add((ns.tieneIsPublisherLicensed, RDF.type, RDF.Property))
 
 # Leer el archivo CSV
-df = pd.read_csv('C:\\Users\\juane\\OneDrive\\Documentos\\Universidad\\Semantic\\SemanticWeb\\Entrega2\\archivo_entidades.csv')
+df = pd.read_csv('archivo_entidades.csv')
 
 # Función para convertir la cadena en una lista de diccionarios y extraer el título de cada referencia
 def extract_reference_titles(references_str):

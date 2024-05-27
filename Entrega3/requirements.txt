@@ -1,6 +1,8 @@
 requests
 pandas
 grobid
+rdflib
+owlrl
 aniso8601==9.0.1
 click==8.0.1
 colorama==0.4.4

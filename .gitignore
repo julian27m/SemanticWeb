@@ -166,3 +166,6 @@ cython_debug/
 
 #DataBase
 test.db
+
+#DataBase
+Entrega3/archivo_entidades.csv

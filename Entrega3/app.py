@@ -1,15 +1,14 @@
+import os
+import random
+import pandas as pd
+import json
 from flask import Flask
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from flask_restful import Api
 from flask_uploads import UploadSet, configure_uploads, DOCUMENTS
-
 from modelos import db, Usuario, Articulo
 from vistas import VistaSignIn, VistaLogIn, VistaArticulos, VistaArticulo, vistas_bp
-
-import os
-import random
-
 
 # Extender DOCUMENTS para incluir pdf
 DOCUMENTS += ('pdf',)
@@ -34,54 +33,39 @@ configure_uploads(app, files)
 db.init_app(app)
 
 # Configuración de CORS
-#cors = CORS(app, resources={r"/*": {"origins": "http://172.24.99.90:8080"}})
 cors = CORS(app)
+
+# Función para crear artículos desde un archivo CSV
+def crear_articulos_desde_csv(ruta_csv):
+    df = pd.read_csv(ruta_csv)
+    
+    for _, row in df.iterrows():
+        nombre = row['title']
+        ruta_pdf = row['pdf_path']
+        
+        try:
+            nombre_autor = json.loads(row['authors'])[0]['name']
+        except (IndexError, KeyError):
+            nombre_autor = "anonymous"
+        
+        referencias_list = json.loads(row['references'])
+        referencias = ", ".join([ref['title'] for ref in referencias_list])
+
+        nuevo_articulo = Articulo(
+            nombre=nombre,
+            ruta_pdf=ruta_pdf,
+            nombre_autor=nombre_autor,
+            referencias=referencias
+        )
+        db.session.add(nuevo_articulo)
+
+    db.session.commit()
+    print("Artículos añadidos exitosamente desde el CSV.")
 
 with app.app_context():
     db.create_all()
     if not Articulo.query.first():  # Verifica si la tabla de artículos está vacía
-        articulos = [
-            {"nombre": "One size fits all” database architectures do not work for DSS", "ruta_pdf": "DescargasPDFs/“One size fits all” database architectures do not work for DSS.pdf", "nombre_autor": "Clark D. French"},
-            {"nombre": "ÆMPA: A Process Algebraic Description Language for thePerformance Analysis of Software Architectures", "ruta_pdf": "DescargasPDFs/ÆMPA_ a process algebraic description language for the performance analysis of software architectures.pdf", "nombre_autor": "Marco Bernardo"},
-            {"nombre": "YFilter: Efficient and Scalable Filtering of XML Documents", "ruta_pdf": "DescargasPDFs/YFilter_ efficient and scalable filtering of XML documents.pdf", "nombre_autor": "Yanlei Diao"},
-            {"nombre": "Z3: An Efficient SMT Solver", "ruta_pdf": "DescargasPDFs/Z3_ An Efficient SMT Solver.pdf", "nombre_autor": "Leonardo de Moura"},
-            {"nombre": "ZCS: A Zeroth Level Classifier System", "ruta_pdf": "DescargasPDFs/ZCS_ A Zeroth Level Classifier System.pdf", "nombre_autor": "Stewart W. Wilson"},
-            {"nombre": "A practical approach for 'zero' downtime in an operational information system", "ruta_pdf": "DescargasPDFs/A practical approach for 'zero' downtime in an operational information system.pdf", "nombre_autor": "John Doe"},
-            {"nombre": "Agent-Mediated Electronic Commerce", "ruta_pdf": "DescargasPDFs/Agent-Mediated Electronic Commerce.pdf", "nombre_autor": "Jane Smith"},
-            {"nombre": "An Expedited Forwarding PHB", "ruta_pdf": "DescargasPDFs/An Expedited Forwarding PHB.pdf", "nombre_autor": "Alice Johnson"},
-            {"nombre": "Assured Forwarding PHB Group", "ruta_pdf": "DescargasPDFs/Assured Forwarding PHB Group.pdf", "nombre_autor": "Bob Brown"},
-            {"nombre": "Automatic", "ruta_pdf": "DescargasPDFs/Automatic.pdf", "nombre_autor": "Charlie Davis"},
-            {"nombre": "BGP Extended Communities Attribute", "ruta_pdf": "DescargasPDFs/BGP Extended Communities Attribute.pdf", "nombre_autor": "David Evans"},
-            {"nombre": "Clarifying when Standards Track Documents may Refer Normatively to Documents at a Lower Level", "ruta_pdf": "DescargasPDFs/Clarifying when Standards Track Documents may Refer Normatively to Documents at a Lower Level.pdf", "nombre_autor": "Eve Foster"},
-            {"nombre": "Computing TCP's Retransmission Timer", "ruta_pdf": "DescargasPDFs/Computing TCP's Retransmission Timer.pdf", "nombre_autor": "Frank Green"},
-            {"nombre": "Massachusetts", "ruta_pdf": "DescargasPDFs/Massachusetts.pdf", "nombre_autor": "George Harris"},
-            {"nombre": "One-way Loss Pattern Sample Metrics", "ruta_pdf": "DescargasPDFs/One-way Loss Pattern Sample Metrics.pdf", "nombre_autor": "Hannah Clark"},
-            {"nombre": "RTP Payload Format for H.263 Video Streams", "ruta_pdf": "DescargasPDFs/RTP Payload Format for H.263 Video Streams.pdf", "nombre_autor": "Ivy Johnson"},
-            {"nombre": "RTP Payload Format for JPEG-compressed Video", "ruta_pdf": "DescargasPDFs/RTP Payload Format for JPEG-compressed Video.pdf", "nombre_autor": "Jack Kelly"},
-            {"nombre": "Seamless Image Stitching in the Gradient Domain", "ruta_pdf": "DescargasPDFs/Seamless Image Stitching in the Gradient Domain.pdf", "nombre_autor": "Karen Lee"},
-            {"nombre": "Temporal Constraints: A Survey", "ruta_pdf": "DescargasPDFs/Temporal Constraints_ A Survey.pdf", "nombre_autor": "Leo Martinez"},
-            {"nombre": "Terminology for Forwarding Information Base (FIB) based Router Performance", "ruta_pdf": "DescargasPDFs/Terminology for Forwarding Information Base (FIB) based Router Performance.pdf", "nombre_autor": "Mia Nelson"}
-        ]
-
-        for articulo_info in articulos:
-            autor_id = articulo_info.get("autor_id")
-            if autor_id and not Usuario.query.get(autor_id):
-                autor_id = None
-            
-            referencias = random.sample([art['nombre'] for art in articulos if art != articulo_info], 2)  # Selecciona 2 referencias aleatorias
-            referencias_str = ", ".join(referencias)
-            
-            articulo = Articulo(
-                nombre=articulo_info["nombre"],
-                ruta_pdf=articulo_info["ruta_pdf"],
-                autor_id=autor_id,
-                nombre_autor=articulo_info.get("nombre_autor", None),
-                referencias=referencias_str
-            )
-            db.session.add(articulo)
-
-        db.session.commit()
-        print("Artículos añadidos exitosamente.")
+        crear_articulos_desde_csv('archivo_entidades.csv')  # Reemplaza 'archivo_entidades.csv' con la ruta real
 
 api = Api(app)
 jwt = JWTManager(app)
