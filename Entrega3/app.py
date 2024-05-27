@@ -33,6 +33,10 @@ configure_uploads(app, files)
 # Resto de la configuración
 db.init_app(app)
 
+# Configuración de CORS
+#cors = CORS(app, resources={r"/*": {"origins": "http://172.24.99.90:8080"}})
+cors = CORS(app)
+
 with app.app_context():
     db.create_all()
     if not Articulo.query.first():  # Verifica si la tabla de artículos está vacía
@@ -79,7 +83,6 @@ with app.app_context():
         db.session.commit()
         print("Artículos añadidos exitosamente.")
 
-cors = CORS(app)
 api = Api(app)
 jwt = JWTManager(app)
 
